@@ -2,9 +2,9 @@
 
 var gulp = require('gulp');
 
-var bump = require('gulp-bump');
-var git = require('gulp-git');
 var filter = require('gulp-filter');
+var git = require('gulp-git');
+var bump = require('gulp-bump');
 var tagVersion = require('gulp-tag-version');
 
 
@@ -39,3 +39,16 @@ function inc(importance) {
 gulp.task('patch', function() { return inc('patch'); });
 gulp.task('feature', function() { return inc('minor'); });
 gulp.task('release', function() { return inc('major'); });
+
+
+/**
+ * Run git push with tags.
+ */
+gulp.task('pushtags', function() {
+
+	return git.push('origin', 'master', { args: '--tags' }, function(err) {
+		if (err) {
+			throw err;
+		}
+	});
+});
