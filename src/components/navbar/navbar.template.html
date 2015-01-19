@@ -1,20 +1,22 @@
-<nav class="navbar navbar-static-top navbar-inverse" ng-controller="NavbarCtrl">
-	<div class="container-fluid">
+<nav class="navbar navbar-static-top navbar-inverse" role="navigation" ng-controller="NavbarCtrl">
+	<div class="container">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="https://github.com/Swiip/generator-gulp-angular">
-				<span class="glyphicon glyphicon-home"></span> Style Guide
+			<button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" ui-sref="home">
+				<span class="fa fa-home"></span> Style Guide
 			</a>
 		</div>
 
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+		<div class="collapse navbar-collapse" collapse="navCollapsed">
 			<ul class="nav navbar-nav">
-				<li class="active"><a ng-href="#">Home</a></li>
-				<li><a ng-href="#">About</a></li>
-				<li><a ng-href="#">Contact</a></li>
-			</ul>
-
-			<ul class="nav navbar-nav navbar-right">
-				<li>Current date: {{ date | date:'yyyy-MM-dd' }}</li>
+				<li class="active"><a ui-sref="home">Home</a></li>
+				<li><a ng-href="#">Components</a></li>
+				<li><a ng-href="#">Stages</a></li>
 			</ul>
 		</div>
 	</div>

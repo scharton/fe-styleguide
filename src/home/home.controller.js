@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('styleguide')
- 	.controller('MainCtrl', MainCtrl);
+ 	.controller('HomeCtrl', HomeCtrl);
 
 
-function MainCtrl($scope) {
+function HomeCtrl($scope) {
     $scope.awesomeThings = [
 		{
 			'title': 'AngularJS',
