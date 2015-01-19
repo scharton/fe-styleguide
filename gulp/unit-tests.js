@@ -9,13 +9,13 @@ var wiredep = require('wiredep');
 gulp.task('test', function() {
 	var bowerDeps = wiredep({
 		directory: 'bower_components',
-		exclude: ['bootstrap-sass-official'],
+		exclude: ['fe-bootstrap'],
 		dependencies: true,
 		devDependencies: true
 	});
 
 	var testFiles = bowerDeps.js.concat([
-		'src/**/*.js'
+		'src/{app,components}/**/*.js'
 	]);
 
 	return gulp.src(testFiles)

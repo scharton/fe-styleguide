@@ -9,7 +9,7 @@ var plugins = require('gulp-load-plugins')({
 
 
 gulp.task('jshint', function () {
-	return gulp.src('src/**/*.js')
+	return gulp.src('src/{app,components}/**/*.js')
 		.pipe(plugins.jshint())
 		.pipe(plugins.jshint.reporter('jshint-stylish'));
 });
@@ -21,14 +21,14 @@ gulp.task('styles', ['injector:sass'], function () {
 	// Compile applicatin and vendor SASS to CSS. Put the generated CSS files to .tmp/.
 	//
 
-	return gulp.src(['src/index.scss'])
+	return gulp.src(['src/app/index.scss'])
 		.pipe(plugins.sass({style: 'expanded'}))
 		.on('error', function handleError(err) {
 			console.error(err.toString());
 			this.emit('end');
 		})
 		.pipe(plugins.autoprefixer('last 1 version'))
-		.pipe(gulp.dest('.tmp/'));
+		.pipe(gulp.dest('.tmp/app/'));
 });
 
 
@@ -41,24 +41,25 @@ gulp.task('injector:sass', function () {
 	//
 
 	var source = gulp.src([
-			'src/**/*.scss',
-			'!src/index.scss'
+			'src/{app,components}/**/*.scss',
+			'!src/app/index.scss'
 		], {read: false});
 
-	// Remove 'src' from @import path
+	// Fix 'src/app/' and 'src/components/' @import paths
 	var transform = function(filePath) {
-			filePath = filePath.replace('src/', '');
+			filePath = filePath.replace('src/app/', '');
+			filePath = filePath.replace('src/components/', '../components/');
 			return '@import \'' + filePath + '\';';
 		};
 
-	return gulp.src('src/index.scss')
+	return gulp.src('src/app/index.scss')
 		.pipe(plugins.inject(source, {
 			transform: transform,
 			starttag: '// injector',
 			endtag: '// endinjector',
 			addRootSlash: false
 		}))
-		.pipe(gulp.dest('src/'));
+		.pipe(gulp.dest('src/app/'));
 });
 
 
@@ -69,9 +70,9 @@ gulp.task('injector:js', ['jshint'], function () {
 	//
 
 	var source = gulp.src([
-			'src/**/*.js',
-			'!src/**/*.spec.js',
-			'!src/**/*.mock.js'
+			'src/{app,components}/**/*.js',
+			'!src/{app,components}/**/*.spec.js',
+			'!src/{app,components}/**/*.mock.js'
 		]);
 
 	return gulp.src('src/index.html')
@@ -89,7 +90,7 @@ gulp.task('partials', function () {
 	// Concatenate and register AngularJS templates in $templateCache.
 	//
 
-	return gulp.src('src/**/*.template.html')
+	return gulp.src('src/{app,components}/**/*.html')
 		.pipe(plugins.minifyHtml({
 			empty: true,
 			spare: true,

@@ -13,8 +13,18 @@ angular.module('styleguide', [
 		$stateProvider
 			.state('home', {
 				url: '/',
-				templateUrl: 'home/home.template.html',
+				templateUrl: 'app/home/home.html',
 				controller: 'HomeCtrl'
+			})
+			.state('components', {
+				url: 'components',
+				templateUrl: 'app/components/components.html',
+				controller: 'ComponentsCtrl'
+			})
+			.state('stages', {
+				url: 'stages',
+				templateUrl: 'app/stages/stages.html',
+				controller: 'StagesCtrl'
 			});
 
 		$urlRouterProvider.otherwise('/');
