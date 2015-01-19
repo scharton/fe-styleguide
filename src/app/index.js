@@ -17,12 +17,12 @@ angular.module('styleguide', [
 				controller: 'HomeCtrl'
 			})
 			.state('components', {
-				url: 'components',
+				url: '/components',
 				templateUrl: 'app/components/components.html',
 				controller: 'ComponentsCtrl'
 			})
 			.state('stages', {
-				url: 'stages',
+				url: '/stages',
 				templateUrl: 'app/stages/stages.html',
 				controller: 'StagesCtrl'
 			});
