@@ -15,13 +15,13 @@ gulp.task('jshint', function () {
 });
 
 
-gulp.task('styles', ['wiredep', 'injector:sass'], function () {
+gulp.task('styles', ['injector:sass'], function () {
 
 	//
 	// Compile applicatin and vendor SASS to CSS. Put the generated CSS files to .tmp/.
 	//
 
-	return gulp.src(['src/index.scss', 'src/vendor.scss'])
+	return gulp.src(['src/index.scss'])
 		.pipe(plugins.sass({style: 'expanded'}))
 		.on('error', function handleError(err) {
 			console.error(err.toString());
@@ -42,8 +42,7 @@ gulp.task('injector:sass', function () {
 
 	var source = gulp.src([
 			'src/**/*.scss',
-			'!src/index.scss',
-			'!src/vendor.scss'
+			'!src/index.scss'
 		], {read: false});
 
 	// Remove 'src' from @import path
@@ -63,27 +62,7 @@ gulp.task('injector:sass', function () {
 });
 
 
-gulp.task('injector:css', ['styles'], function () {
-
-	//
-	// Inject application-level CSS files into index.html.
-	//
-
-	var source = gulp.src([
-			'.tmp/**/*.css',
-			'!.tmp/vendor.css'
-		], {read: false});
-
-	return gulp.src('src/index.html')
-		.pipe(plugins.inject(source, {
-			ignorePath: '.tmp',
-			addRootSlash: false
-		}))
-		.pipe(gulp.dest('src/'));
-});
-
-
-gulp.task('injector:js', ['jshint', 'injector:css'], function () {
+gulp.task('injector:js', ['jshint'], function () {
 
 	//
 	// Inject application-level JS files into index.html.
@@ -123,8 +102,8 @@ gulp.task('partials', function () {
 });
 
 
-gulp.task('html', ['wiredep', 'injector:css', 'injector:js', 'partials'], function () {
-	var htmlFilter = plugins.filter('*.html');
+gulp.task('html', ['wiredep', 'styles', 'injector:js', 'partials'], function () {
+	// var htmlFilter = plugins.filter('*.html');
 	var jsFilter = plugins.filter('**/*.js');
 	var cssFilter = plugins.filter('**/*.css');
 	var assets;
@@ -152,7 +131,7 @@ gulp.task('html', ['wiredep', 'injector:css', 'injector:js', 'partials'], functi
 
 		// Optimize and minify CSS files
 		.pipe(cssFilter)
-		.pipe(plugins.replace('bower_components/bootstrap-sass-official/assets/fonts/bootstrap', 'fonts'))
+		//.pipe(plugins.replace('bower_components/bootstrap-sass-official/assets/fonts/bootstrap', 'fonts'))
 		.pipe(plugins.csso())
 		.pipe(cssFilter.restore())
 
@@ -162,14 +141,15 @@ gulp.task('html', ['wiredep', 'injector:css', 'injector:js', 'partials'], functi
 		// Replace static asset references with the revisioned ones
 		.pipe(plugins.revReplace())
 
-		// Minify HTML files
-		.pipe(htmlFilter)
-		.pipe(plugins.minifyHtml({
-			empty: true,
-			spare: true,
-			quotes: true
-		}))
-		.pipe(htmlFilter.restore())
+		// // Minify HTML files
+		// .pipe(htmlFilter)
+		// .pipe(plugins.minifyHtml({
+		// 	empty: true,
+		// 	spare: true,
+		// 	quotes: true,
+		// 	conditionals: true
+		// }))
+		// .pipe(htmlFilter.restore())
 
 		// Output to dist dir
 		.pipe(gulp.dest('dist/'))
@@ -189,10 +169,8 @@ gulp.task('images', function () {
 
 
 gulp.task('fonts', function () {
-	return gulp.src(plugins.mainBowerFiles())
-		.pipe(plugins.filter('**/*.{eot,svg,ttf,woff}'))
-		.pipe(plugins.flatten())
-		.pipe(gulp.dest('dist/fonts/'));
+	return gulp.src('bower_components/fe-bootstrap/dist/assets/fonts/**/*.{eot,svg,ttf,woff}')
+		.pipe(gulp.dest('dist/assets/fonts/'));
 });
 
 

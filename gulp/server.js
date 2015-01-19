@@ -48,7 +48,6 @@ gulp.task('serve', ['watch'], function () {
 	], [
 		'.tmp/**/*.css',
 		'src/assets/images/**/*',
-		// 'src/*.html',
 		'src/**/*.html',
 		'src/**/*.js'
 	]);
@@ -65,7 +64,7 @@ gulp.task('serve:dist', ['build'], function () {
 });
 
 
-gulp.task('serve:e2e', ['wiredep', 'injector:js', 'injector:css'], function () {
+gulp.task('serve:e2e', ['wiredep', 'styles', 'injector:js'], function () {
 	browserSyncInit(['src', '.tmp'], null, []);
 });
 

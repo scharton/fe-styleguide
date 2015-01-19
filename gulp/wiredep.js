@@ -8,10 +8,8 @@ gulp.task('wiredep', function () {
 	//
 	// Wire bower components to index.html.
 	//
-	// Modernizer is included manually in index.html, so we exclude it from auto-wiring.
-	//
-	// We excluded Bootstrap SASS and CSS. SASS will be compiled to CSS using Gulp's SASS
-	// plugin.
+	// Modernizer and fe-bootstrap are included manually in index.html, so we
+	// exclude it from auto-wiring.
 	//
 	// Also, angular-bootstrap already carries the bootstrap JS, so we don't need to
 	// include Bootstrap scripts.
@@ -20,7 +18,7 @@ gulp.task('wiredep', function () {
 	return gulp.src('src/index.html')
 		.pipe(wiredep({
 			directory: 'bower_components',
-			exclude: [/modernizr/, /bootstrap-sass-official/, /bootstrap\.css/]
+			exclude: [/modernizr/, /fe-bootstrap/]
 		}))
 		.pipe(gulp.dest('src'));
 });
