@@ -21,6 +21,12 @@ angular.module('styleguide', [
 				templateUrl: 'app/components/components.html',
 				controller: 'ComponentsCtrl'
 			})
+			.state('components.details', {
+				url: '/{componentId}',
+				templateUrl: function(stateParams) {
+					return 'app/components/' + stateParams.componentId + '.html';
+				}
+			})
 			.state('stages', {
 				url: '/stages',
 				templateUrl: 'app/stages/stages.html',
