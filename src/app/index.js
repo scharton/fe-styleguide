@@ -24,7 +24,7 @@ angular.module('styleguide', [
 			.state('components.details', {
 				url: '/{componentId}',
 				templateUrl: function(stateParams) {
-					return 'app/components/' + stateParams.componentId + '.html';
+					return 'app/components/details/' + stateParams.componentId + '.html';
 				}
 			})
 			.state('stages', {
