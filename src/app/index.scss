@@ -22,5 +22,10 @@
 	padding: 5px;
 }
 
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #fcfcfc;
+}
+
 // injector
 // endinjector
