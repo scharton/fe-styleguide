@@ -17,5 +17,9 @@
   },
   "devDependencies": {
     "angular-mocks": "~1.2.27"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git-prd-01/spa-development/fe-styleguide.git"
   }
 }
