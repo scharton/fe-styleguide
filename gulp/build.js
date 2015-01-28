@@ -153,8 +153,8 @@ gulp.task('html', ['wiredep', 'styles', 'injector:js', 'partials'], function () 
 		// .pipe(htmlFilter.restore())
 
 		// Output to dist dir
-		.pipe(gulp.dest('dist/'))
-		.pipe(plugins.size({ title: 'dist/', showFiles: true }));
+		.pipe(gulp.dest('dist/'));
+		// .pipe(plugins.size({ title: 'dist/', showFiles: true }));
 });
 
 

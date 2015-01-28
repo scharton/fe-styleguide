@@ -4,7 +4,6 @@ var gulp = require('gulp');
 
 var util = require('util');
 var browserSync = require('browser-sync');
-var proxy = require('./proxy');
 
 
 function browserSyncInit(baseDir, files, browser) {
@@ -28,7 +27,6 @@ function browserSyncInit(baseDir, files, browser) {
 		startPath: '/',
 		server: {
 			baseDir: baseDir,
-			middleware: proxy,
 			routes: routes
 		},
 		browser: browser
