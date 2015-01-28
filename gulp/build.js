@@ -160,11 +160,11 @@ gulp.task('html', ['wiredep', 'styles', 'injector:js', 'partials'], function () 
 
 gulp.task('images', function () {
 	return gulp.src('src/assets/images/**/*')
-		.pipe(plugins.imagemin({
-			optimizationLevel: 3,
-			progressive: true,
-			interlaced: true
-		}))
+		// .pipe(plugins.imagemin({
+		// 	optimizationLevel: 3,
+		// 	progressive: true,
+		// 	interlaced: true
+		// }))
 		.pipe(gulp.dest('dist/assets/images/'));
 });
 
