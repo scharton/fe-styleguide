@@ -1,12 +1,12 @@
 'use strict';
 
-describe('The main view', function () {
+describe('The home view', function () {
 
 	var page;
 
 	beforeEach(function () {
 		browser.get('http://localhost:3000/index.html');
-		page = require('./main.po');
+		page = require('./home.po');
 	});
 
 	it('should include jumbotron with correct data', function() {

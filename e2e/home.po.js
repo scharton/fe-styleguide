@@ -5,7 +5,7 @@
 
 'use strict';
 
-var MainPage = function() {
+var HomePage = function() {
 
 	this.jumbEl = element(by.css('.jumbotron'));
 
@@ -14,4 +14,4 @@ var MainPage = function() {
 	this.thumbnailEls = element(by.css('body')).all(by.repeater('awesomeThing in awesomeThings'));
 };
 
-module.exports = new MainPage();
+module.exports = new HomePage();
