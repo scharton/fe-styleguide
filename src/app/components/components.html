@@ -1,19 +1,19 @@
 <div id="components-c" class="container body-container">
 
-	<!-- Components list -->
-	<div class="col-md-2 nav-list">
-		<ul class="nav nav-pills nav-stacked">
-			<li role="presentation" ui-sref-active="active" ng-repeat="component in components">
-				<a ui-sref="components.details({ componentId: component.id })" ng-bind="component.name"></a>
-			</li>
-		</ul>
-	</div>
-	<!-- /Components list -->
+  <!-- Components list -->
+  <div class="col-md-2 nav-list">
+    <ul class="nav nav-pills nav-stacked">
+      <li role="presentation" ui-sref-active="active" ng-repeat="component in components">
+        <a ui-sref="components.details({ componentId: component.id })" ng-bind="component.name"></a>
+      </li>
+    </ul>
+  </div>
+  <!-- /Components list -->
 
-	<!-- Component view -->
-	<div class="col-md-10 component-view">
-		<div ui-view></div>
-	</div>
-	<!-- /Component view -->
+  <!-- Component view -->
+  <div class="col-md-10 component-view">
+    <div ui-view></div>
+  </div>
+  <!-- /Component view -->
 
 </div>

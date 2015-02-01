@@ -1,10 +1,9 @@
 'use strict';
 
 angular.module('styleguide')
- 	.controller('StagesCtrl', StagesCtrl);
+  .controller('StagesCtrl', StagesCtrl);
 
 
 function StagesCtrl($scope) {
-
-    $scope.hello = '\'Allo, world!';
+  $scope.hello = '\'Allo, world!';
 }

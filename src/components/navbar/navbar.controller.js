@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('styleguide')
-	.controller('NavbarCtrl', NavbarCtrl);
+  .controller('NavbarCtrl', NavbarCtrl);
 
 function NavbarCtrl($scope) {
-	$scope.date = new Date();
+  $scope.date = new Date();
 }

@@ -22,18 +22,18 @@ var tagVersion = require('gulp-tag-version');
  * introduced a feature or made a backwards-incompatible release.
  */
 function inc(importance) {
-	// Get all the files to bump version in
-	return gulp.src(['./bower.json', './package.json'])
-		// Bump the version number in those files
-		.pipe(bump({ type: importance }))
-		// Save it back to filesystem
-		.pipe(gulp.dest('./'))
-		// Commit the changed version number
-		.pipe(git.commit('bumps package version'))
-		// Read only one file to get the version number
-		.pipe(filter('package.json'))
-		// Tag it in the repository
-		.pipe(tagVersion());
+  // Get all the files to bump version in
+  return gulp.src(['./bower.json', './package.json'])
+    // Bump the version number in those files
+    .pipe(bump({ type: importance }))
+    // Save it back to filesystem
+    .pipe(gulp.dest('./'))
+    // Commit the changed version number
+    .pipe(git.commit('bumps package version'))
+    // Read only one file to get the version number
+    .pipe(filter('package.json'))
+    // Tag it in the repository
+    .pipe(tagVersion());
 }
 
 gulp.task('patch', function() { return inc('patch'); });
@@ -46,9 +46,9 @@ gulp.task('release', function() { return inc('major'); });
  */
 gulp.task('pushtags', function() {
 
-	return git.push('origin', 'master', { args: '--tags' }, function(err) {
-		if (err) {
-			throw err;
-		}
-	});
+  return git.push('origin', 'master', { args: '--tags' }, function(err) {
+    if (err) {
+      throw err;
+    }
+  });
 });

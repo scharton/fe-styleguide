@@ -13,23 +13,23 @@ gulp.task('webdriver-standalone', plugins.protractor.webdriver_standalone);
 
 
 function runProtractor (done) {
-	var testFiles = [
-		'test/e2e/**/*.js'
-	];
+  var testFiles = [
+    'test/e2e/**/*.js'
+  ];
 
-	gulp.src(testFiles)
-		.pipe(plugins.protractor.protractor({
-			configFile: 'protractor.conf.js',
-		}))
-		.on('error', function (err) {
-			// Make sure failed tests cause gulp to exit non-zero
-			throw err;
-		})
-		.on('end', function () {
-			// Close browser sync server
-			browserSync.exit();
-			done();
-		});
+  gulp.src(testFiles)
+    .pipe(plugins.protractor.protractor({
+      configFile: 'protractor.conf.js',
+    }))
+    .on('error', function (err) {
+      // Make sure failed tests cause gulp to exit non-zero
+      throw err;
+    })
+    .on('end', function () {
+      // Close browser sync server
+      browserSync.exit();
+      done();
+    });
 }
 
 

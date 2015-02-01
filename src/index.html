@@ -1,79 +1,77 @@
 <!doctype html>
-<html class="no-js" ng-app="styleguide">
+<!--[if lt IE 8]>     <html class="no-js lt-ie10 lt-ie9 lt-ie8" ng-app="styleguide"><![endif]-->
+<!--[if IE 8]>        <html class="no-js lt-ie10 lt-ie9" ng-app="styleguide"><![endif]-->
+<!--[if IE 9]>        <html class="no-js lt-ie10" ng-app="styleguide"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" ng-app="styleguide"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>Style Guide</title>
+    <meta name="description" content="FE Style Guide">
+    <meta name="viewport" content="width=device-width">
 
-    <head>
-		<meta charset="utf-8">
-		<title>Style Guide</title>
-		<meta name="description" content="FE Style Guide">
-		<meta name="viewport" content="width=device-width">
+    <!-- build:css styles/vendor.css -->
+    <link rel="stylesheet" href="../bower_components/fe-bootstrap/dist/styles/bootstrap.css" />
+    <link rel="stylesheet" href="../bower_components/fontawesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="../bower_components/open-sans-fontface/open-sans.css" />
+    <link rel="stylesheet" href="../bower_components/prism/themes/prism.css" />
+    <!-- endbuild -->
 
-		<!-- build:css styles/vendor.css -->
-		<link rel="stylesheet" href="../bower_components/fe-bootstrap/dist/styles/bootstrap.css" />
-		<link rel="stylesheet" href="../bower_components/prism/themes/prism.css" />
+    <!-- build:css({.tmp,src}) styles/app.css -->
+    <link rel="stylesheet" href="app/index.css">
+    <!-- endbuild -->
+
+    <!-- build:js scripts/modernizr.js -->
+    <script src="../bower_components/modernizr/modernizr.js"></script>
 		<!-- endbuild -->
-
-		<!-- build:css styles/vendor-ie8.css -->
-		<!--[if lt IE 9]>
-			<link rel="stylesheet" href="../bower_components/fe-bootstrap/dist/styles/bootstrap-ie8.css" />
-		<![endif]-->
-		<!-- endbuild -->
-
-		<!-- build:css({.tmp,src}) styles/app.css -->
-		<link rel="stylesheet" href="app/index.css">
-		<!-- endbuild -->
-
-		<!-- build:js scripts/modernizr.js -->
-		<script src="../bower_components/modernizr/modernizr.js"></script>
-		<!-- endbuild -->
-  	</head>
+  </head>
 
 
 	<body>
-		<!--[if lt IE 10]>
-			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-		<![endif]-->
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-		<!-- Navigation bar -->
-		<div ng-include="'components/navbar/navbar.html'"></div>
+    <!-- Navigation bar -->
+    <div ng-include="'components/navbar/navbar.html'"></div>
 
-		<!-- Body view -->
-		<div ui-view class="body-view"></div>
+    <!-- Body view -->
+    <div ui-view class="body-view"></div>
 
 
-		<!-- build:js scripts/vendor.js -->
-		<!-- bower:js -->
-		<script src="../bower_components/jquery/dist/jquery.js"></script>
-		<script src="../bower_components/angular/angular.js"></script>
-		<script src="../bower_components/angular-animate/angular-animate.js"></script>
-		<script src="../bower_components/angular-cookies/angular-cookies.js"></script>
-		<script src="../bower_components/angular-touch/angular-touch.js"></script>
-		<script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
-		<script src="../bower_components/angular-resource/angular-resource.js"></script>
-		<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-		<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-		<script src="../bower_components/prism/prism.js"></script>
-		<!-- endbower -->
-		<!-- endbuild -->
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="../bower_components/angular-touch/angular-touch.js"></script>
+    <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="../bower_components/prism/prism.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
 
-		<!-- build:js({.tmp,src}) scripts/app.js -->
-		<!-- inject:js -->
-		<script src="app/index.js"></script>
-		<script src="app/stages/stages.route.js"></script>
-		<script src="app/stages/stages.controller.js"></script>
-		<script src="app/home/home.route.js"></script>
-		<script src="app/home/home.controller.js"></script>
-		<script src="app/components/components.route.js"></script>
-		<script src="app/components/components.controller.js"></script>
-		<script src="components/prism/prism-paste.directive.js"></script>
-		<script src="components/prism/prism-copy.directive.js"></script>
-		<script src="components/navbar/navbar.controller.js"></script>
-		<!-- endinject -->
+    <!-- build:js({.tmp,src}) scripts/app.js -->
+    <!-- inject:js -->
+    <script src="app/index.js"></script>
+    <script src="app/stages/stages.route.js"></script>
+    <script src="app/stages/stages.controller.js"></script>
+    <script src="app/home/home.route.js"></script>
+    <script src="app/home/home.controller.js"></script>
+    <script src="app/components/components.route.js"></script>
+    <script src="app/components/components.controller.js"></script>
+    <script src="components/prism/prism-paste.directive.js"></script>
+    <script src="components/prism/prism-copy.directive.js"></script>
+    <script src="components/navbar/navbar.controller.js"></script>
+    <!-- endinject -->
 
-		<!-- inject:partials -->
-		<!-- angular templates will be automaticaly converted in js and inserted here -->
-		<!-- endinject -->
-		<!-- endbuild -->
+    <!-- inject:partials -->
+    <!-- angular templates will be automaticaly converted in js and inserted here -->
+    <!-- endinject -->
+    <!-- endbuild -->
 
-	</body>
+  </body>
 
 </html>

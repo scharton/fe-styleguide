@@ -13,7 +13,9 @@
     "angular-bootstrap": "0.12.x",
     "angular": "~1.2.27",
     "fe-bootstrap": "latest",
-    "prism": "https://github.com/LeaVerou/prism.git#gh-pages"
+    "prism": "https://github.com/LeaVerou/prism.git#gh-pages",
+    "open-sans-fontface": "~1.2.1",
+    "fontawesome": "~4.3.0"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.27"

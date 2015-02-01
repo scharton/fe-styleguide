@@ -1,4 +1,4 @@
 {
-	"directory": "bower_components",
-    "registry": "http://bower.fngn.com:5678"
+  "directory": "bower_components",
+  "registry": "http://bower.fngn.com:5678"
 }
