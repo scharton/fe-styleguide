@@ -12,11 +12,3 @@ gulp.task('bower:refresh', shell.task([
   'echo Installing bower components ...',
   'bower install'
 ]));
-
-
-/**
- * Register component in bower registry
- */
-// gulp.task('bower:register', function() {
-  // TODO
-// });
