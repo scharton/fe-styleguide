@@ -5,7 +5,7 @@ angular.module('styleguide')
 
 
 function HomeCtrl($scope) {
-    $scope.awesomeThings = [
+  $scope.awesomeThings = [
     {
       'title': 'AngularJS',
       'url': 'https://angularjs.org/',
@@ -68,7 +68,7 @@ function HomeCtrl($scope) {
     }
   ];
 
-    angular.forEach($scope.awesomeThings, function(awesomeThing) {
+  angular.forEach($scope.awesomeThings, function(awesomeThing) {
     awesomeThing.rank = Math.random();
-    });
+  });
 }
