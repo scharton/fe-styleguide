@@ -5,11 +5,7 @@ var gulp = require('gulp');
 /**
  * Wire bower components to index.html.
  *
- * Modernizer and fe-bootstrap are included manually in index.html, so we
- * exclude it from auto-wiring.
- *
- * Also, angular-bootstrap already carries the bootstrap JS, so we don't need to
- * include Bootstrap scripts.
+ * Modernizer is included manually in index.html, so we exclude it from auto-wiring.
  */
 gulp.task('wiredep', function () {
   var wiredep = require('wiredep').stream;

@@ -16,7 +16,7 @@ gulp.task('jshint', function () {
 
 
 /**
- * Compile applicatin and vendor SASS to CSS. Put the generated CSS files to .tmp/.
+ * Compile applicatin SASS to CSS. Put the generated CSS files to .tmp/.
  */
 gulp.task('styles', ['injector:sass'], function () {
 
@@ -62,7 +62,7 @@ gulp.task('injector:sass', function () {
 
 
 /**
- * Inject application-level JS files into index.html.
+ * Inject application-level JS files into index.html
  */
 gulp.task('injector:js', ['jshint'], function () {
 
@@ -82,7 +82,7 @@ gulp.task('injector:js', ['jshint'], function () {
 
 
 /**
- * Concatenate and register AngularJS templates in $templateCache.
+ * Concatenate and register AngularJS templates in $templateCache
  */
 gulp.task('partials', function () {
 
@@ -114,7 +114,7 @@ gulp.task('html', ['wiredep', 'styles', 'injector:js', 'partials'], function () 
       addRootSlash: false
     }))
 
-    // Parse the build blocks in HTMLs. Replace build blocks with concatenated files.
+    // Parse the build blocks in HTMLs. Replace build blocks with concatenated files
     .pipe(assets = plugins.useref.assets())
 
     // Revision the concatenated files

@@ -6,11 +6,11 @@ var util = require('util');
 var browserSync = require('browser-sync');
 
 /**
- * Synchronize browser when the serving files change.
+ * Synchronize browser when the serving files change
  */
 function browserSyncInit(baseDir, files, browser) {
 
-  browser = browser || 'default';
+  browser = browser === undefined ? 'default' : browser;
 
   var routes = null;
   if (baseDir === 'src' || (util.isArray(baseDir) && baseDir.indexOf('src') !== -1)) {
@@ -33,7 +33,7 @@ function browserSyncInit(baseDir, files, browser) {
 
 
 /**
- * Serve files from the src and .tmp dirs.
+ * Serve files from the src and .tmp dirs
  */
 gulp.task('serve', ['watch'], function () {
 
@@ -51,7 +51,7 @@ gulp.task('serve', ['watch'], function () {
 
 
 /**
- * Server files from the dist dir.
+ * Server files from the dist dir
  */
 gulp.task('serve:dist', ['build'], function () {
   browserSyncInit('dist');
