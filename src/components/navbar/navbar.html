@@ -1,4 +1,5 @@
-<nav class="navbar navbar-static-top navbar-inverse" role="navigation" ng-controller="NavbarCtrl">
+<nav class="navbar navbar-static-top navbar-inverse fe-header" role="navigation" ng-controller="NavbarCtrl">
+  <div class="top-line"></div>
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
@@ -14,9 +15,9 @@
 
     <div class="collapse navbar-collapse" collapse="navCollapsed">
       <ul class="nav navbar-nav">
-        <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
         <li ui-sref-active="active"><a ui-sref="components">Components</a></li>
         <li ui-sref-active="active"><a ui-sref="stages">Stages</a></li>
+        <!-- <li ui-sref-active="active"><a ui-sref="fe-components">Live Style Guide (alpha)</a></li> -->
       </ul>
     </div>
   </div>

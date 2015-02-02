@@ -1,13 +1,11 @@
 'use strict';
 
 angular.module('styleguide', [
-  'ngAnimate',
-  'ngCookies',
-  'ngTouch',
   'ngSanitize',
   'ngResource',
   'ui.router',
-  'ui.bootstrap'])
+  'ui.bootstrap',
+  'feSliders'])
 
   .config(function($urlRouterProvider) {
     $urlRouterProvider.otherwise('/');

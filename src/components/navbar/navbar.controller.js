@@ -3,6 +3,10 @@
 angular.module('styleguide')
   .controller('NavbarCtrl', NavbarCtrl);
 
-function NavbarCtrl($scope) {
-  $scope.date = new Date();
+function NavbarCtrl($scope, $rootScope, $state) {
+  $rootScope.$on('$stateChangeSuccess', function(event, toState) {
+    if (toState.name === 'components') {
+      $state.go('components.details', { componentId: 'colors' });
+    }
+  });
 }

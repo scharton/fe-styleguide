@@ -13,6 +13,23 @@
   }
 }
 
+.clear-bkground {
+  background: white;
+}
+
+.pull-up {
+  margin-top: -20px;
+}
+
+.float-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
 .body-view {
   padding: 20px 0;
 }
@@ -25,6 +42,127 @@
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   background: #fcfcfc;
+}
+
+
+// color partials style color class needed to be ported in the future as variables
+
+.primary {
+  background: #1fa0c8;;
+}
+
+.primary-1 {
+  background: #087ea4;;
+}
+
+.primary-light {
+  background: #087ea4;;
+}
+
+.success {
+  background: #809e2d;
+}
+
+.success-1 {
+  background: #637f14;
+}
+
+.success-1 {
+  background: #ebf6ce;
+}
+
+.warning {
+  background: #dc761c;;
+}
+
+.warning-1 {
+  background: #b85e0e;
+}
+
+.warning-light {
+  background: #ffe5d2;
+}
+
+.danger {
+  background: #d92b2b;;
+}
+
+.danger-1 {
+  background: #b00000;
+}
+
+.danger-light {
+  background: #fbe1e2;
+}
+
+.gray {
+  background: #949084;
+}
+
+.gray-1 {
+  background: #949084;
+}
+
+.gray-light {
+  background: #c0bdb2;
+}
+
+.light {
+  background: #f7f7f7;
+}
+
+.light-1 {
+  background: #dddbd4;
+}
+
+.light-light {
+  background: #f3f2eb;
+}
+.color-swatch {
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  border: 1px solid #ddd;
+  margin-right: 20px;
+}
+
+.code-well {
+    font-family: monospace;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.code-tabs .nav-tabs {
+  margin-bottom: -1px;
+}
+
+.demopage iframe {
+  width: 100%;
+  height: 300px;
+  border: solid 1px #ccc;
+}
+
+
+//carousel customization
+.carousel-inner {
+  background: #fff;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+  opacity: 0.5;
+  background: #fff;
+
+  &:hover, &:active {
+    background: #fff;
+    span {
+      color:#087ea4;
+    }
+  }
+  span {
+    color: #949084;
+    text-shadow: none;
+  }
 }
 
 // injector

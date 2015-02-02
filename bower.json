@@ -4,15 +4,13 @@
   "dependencies": {
     "modernizr": "~2.8.3",
     "jquery": "~1.11.1",
-    "angular-animate": "~1.2.27",
-    "angular-cookies": "~1.2.27",
-    "angular-touch": "~1.2.27",
     "angular-sanitize": "~1.2.27",
     "angular-resource": "~1.2.27",
     "angular-ui-router": "~0.2.13",
     "angular-bootstrap": "0.12.x",
     "angular": "~1.2.27",
     "fe-bootstrap": "latest",
+    "fe-slider": "latest",
     "prism": "https://github.com/LeaVerou/prism.git#gh-pages",
     "open-sans-fontface": "~1.2.1",
     "fontawesome": "~4.3.0"
@@ -23,5 +21,9 @@
   "repository": {
     "type": "git",
     "url": "http://git-prd-01/spa-development/fe-styleguide.git"
+  },
+  "resolutions": {
+    "angular": "~1.2.27",
+    "jquery-ui": "~1.11.2"
   }
 }

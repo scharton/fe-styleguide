@@ -156,7 +156,7 @@ gulp.task('html', ['wiredep', 'styles', 'injector:js', 'partials'], function () 
 
 
 gulp.task('images', function () {
-  return gulp.src('src/assets/images/**/*')
+  return gulp.src(['src/assets/images/**/*', 'bower_components/fe-slider/dist/assets/images/*'])
     .pipe(gulp.dest('dist/assets/images/'));
 });
 

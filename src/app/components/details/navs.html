@@ -1,0 +1,89 @@
+<h2>Navigation Elements</h2>
+<hr>
+
+<div class="page-header">
+    <h3>Tab Navigation</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-6" ng-prism-copy="navTabs">
+
+    <!-- Nav tabs -->
+    <ul id="fe-tab" class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#home1" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+      <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+      <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+      <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="home1">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="profile">
+        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="messages">
+        <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="settings">
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+      </div>
+    </div>
+  </div>
+
+    <hr>
+</div> <!-- /.row -->
+
+<div class="row">
+  <div ng-prism-paste="navTabs:markup"></div>
+</div>
+
+
+<div class="page-header">
+    <h3>Pagination</h3>
+</div>
+
+<div class="row" ng-prism-copy="navPagination">
+  <nav>
+    <ul class="pagination">
+      <li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div class="row">
+  <div ng-prism-paste="navPagination:markup"></div>
+</div>
+
+
+<div class="page-header">
+    <h3>Breadcrumbs</h3>
+</div>
+
+<div class="row" ng-prism-copy="navBreadcrumb">
+  <ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Library</a></li>
+    <li class="active">Data</li>
+  </ol>
+</div>
+
+<div class="row">
+  <div ng-prism-paste="navBreadcrumb:markup"></div>
+</div>

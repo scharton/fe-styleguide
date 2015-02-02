@@ -13,34 +13,10 @@ function HomeCtrl($scope) {
       'logo': 'angular.png'
     },
     {
-      'title': 'BrowserSync',
-      'url': 'http://browsersync.io/',
-      'description': 'Time-saving synchronised browser testing.',
-      'logo': 'browsersync.png'
-    },
-    {
       'title': 'GulpJS',
       'url': 'http://gulpjs.com/',
       'description': 'The streaming build system.',
       'logo': 'gulp.png'
-    },
-    {
-      'title': 'Jasmine',
-      'url': 'http://jasmine.github.io/',
-      'description': 'Behavior-Driven JavaScript.',
-      'logo': 'jasmine.png'
-    },
-    {
-      'title': 'Karma',
-      'url': 'http://karma-runner.github.io/',
-      'description': 'Spectacular Test Runner for JavaScript.',
-      'logo': 'karma.png'
-    },
-    {
-      'title': 'Protractor',
-      'url': 'https://github.com/angular/protractor',
-      'description': 'End to end test framework for AngularJS applications built on top of WebDriverJS.',
-      'logo': 'protractor.png'
     },
     {
       'title': 'jQuery',
@@ -65,6 +41,18 @@ function HomeCtrl($scope) {
       'url': 'https://github.com/sass/node-sass',
       'description': 'Node.js binding to libsass, the C version of the popular stylesheet preprocessor, Sass.',
       'logo': 'node-sass.png'
+    },
+    {
+      'title': 'Bower',
+      'url': 'http://bower.io/',
+      'description': 'A package manager for the web',
+      'logo': 'bower-logo.png'
+    },
+    {
+      'title': 'Yeoman',
+      'url': 'http://yeoman.io/',
+      'description': 'Scaffolding tool for modern webapps',
+      'logo': 'yeoman.png'
     }
   ];
 
@@ -72,3 +60,11 @@ function HomeCtrl($scope) {
     awesomeThing.rank = Math.random();
   });
 }
+
+
+// Hack fix for the Bootstrap Carousel conflict with Angular JS
+angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
+  .controller('CarouselController', function() {})
+  .directive('carousel', function() {
+      return {};
+  });

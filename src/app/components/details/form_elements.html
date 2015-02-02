@@ -1,0 +1,119 @@
+<h2>Form Elements</h2>
+<hr>
+
+<div class="page-header">
+    <h3>Login Froms</h3>
+</div>
+
+<div class="row">
+	
+	<div class="col-md-6"  ng-prism-copy="loginForms">
+		<form role="form" class="fe-form">
+	        <div class="form-group">
+	            <label for="exampleInputEmail1">Email address</label>
+	            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+	        </div>
+	        <div class="form-group">
+	            <label for="exampleInputPassword1">Password</label>
+	            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+	        </div>
+	    </form>
+	</div>
+
+</div>
+
+<p class="row">
+	<div ng-prism-paste="loginForms:markup"></div>
+</p>
+
+<hr>
+
+<div class="page-header">
+    <h3>Input Labels</h3>
+</div>
+
+<p class="row">
+
+	<div class="col-md-6" ng-prism-copy="inputLabel">
+
+		<form class="form-horizontal" role="form">
+		  
+	      	<div class="form-group form-group-lg">
+			    <label class="col-sm-3 control-label" for="formGroupInputLarge">Large label</label>
+			    <div class="col-sm-9">
+			      <input class="form-control input-lg" type="text" id="formGroupInputLarge" placeholder="Large input">
+			    </div>
+			</div>
+			  
+	      	<div class="form-group form-group-sm">
+			    <label class="col-sm-3 control-label " for="formGroupInputSmall">Small label</label>
+			    <div class="col-sm-9">
+			      <input class="form-control input-sm" type="text" id="formGroupInputSmall" placeholder="Small input">
+			    </div>
+			</div>
+	      
+	      	<div class="form-group">        
+	        	<label class="col-sm-3 control-label input-group-label" for="formGroupInputSmall">Salary</label>
+	        	<div class="col-sm-9">
+		          <div class="input-group">
+		            <div class="input-group-addon">$</div>
+		            <input class="form-control" type="text" placeholder="Enter salary">
+		          </div>          
+		        </div>
+	      	</div>
+	    </form>
+	</div>
+</p>
+
+<p class="row">
+	<div ng-prism-paste="inputLabel:markup"></div>
+</p>
+
+<hr>
+
+<div class="page-header">
+    <h3>Select box</h3>
+</div>
+
+<p class="row">
+  	<div class="col-md-12" ng-prism-copy="selectBox">
+      	<form role="form" class="fe-form">
+        	<div class="checkbox">
+            	<label>
+               		<input type="checkbox">
+               		<span class="lbl padding-20">Check me out</span>
+            	</label>
+        	</div>
+
+        	<div class="radio">
+          		<label>
+            		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            		<span class="lbl padding-20">
+            			Option one is this and that&mdash;be sure to include why it's great
+            		</span>
+          		</label>
+        	</div>
+        	<div class="radio">
+          		<label>
+            		<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            		<span class="lbl padding-20">
+            			Option two can be something else and selecting it will deselect option one
+            		</span>
+          		</label>
+        	</div>
+        	<div class="radio disabled">
+          		<label>
+            		<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+            		<span class="lbl padding-20">
+            			Option three is disabled
+            		</span>
+          		</label>
+        	</div>
+      	</form>
+  	</div>
+</p>
+
+<p class="row">
+	<div ng-prism-paste="selectBox:markup"></div>
+</p>
+
