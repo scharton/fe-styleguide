@@ -128,6 +128,7 @@ gulp.task('html', ['wiredep', 'styles', 'injector:js', 'partials'], function () 
 
     // Optimize and minify CSS files
     .pipe(cssFilter)
+    .pipe(plugins.replace('fonts/glyphicons-', 'fonts/bootstrap/glyphicons-'))
     .pipe(plugins.replace('../fonts/fontawesome-', '../assets/fonts/fontawesome/fontawesome-'))
     .pipe(plugins.replace(/.\/fonts\/(\w+)\/OpenSans-/g, '../assets/fonts/opensans/$1/OpenSans-'))
     .pipe(plugins.csso())
@@ -162,7 +163,7 @@ gulp.task('images', function () {
 
 
 gulp.task('fonts:bootstrap', function () {
-  return gulp.src('bower_components/fe-bootstrap/dist/assets/fonts/bootstrap/**/*.{eot,svg,ttf,woff}')
+  return gulp.src('bower_components/fe-bootstrap/dist/assets/fonts/**/*.{eot,svg,ttf,woff}')
     .pipe(gulp.dest('dist/assets/fonts/bootstrap'));
 });
 
