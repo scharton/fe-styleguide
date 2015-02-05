@@ -1,4 +1,7 @@
 // An example configuration file.
+
+var HtmlReporter = require('protractor-html-screenshot-reporter');
+
 exports.config = {
   // The address of a running selenium server.
   //seleniumAddress: 'http://localhost:4444/wd/hub',
@@ -17,5 +20,12 @@ exports.config = {
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000
-  }
+  },
+  
+  onPrepare: function() {
+      // Add a screenshot reporter and store screenshots to `e2eresults`: 
+      jasmine.getEnv().addReporter(new HtmlReporter({
+         baseDirectory: 'e2eresults'
+      }));
+   }
 };
