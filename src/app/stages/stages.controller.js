@@ -5,5 +5,5 @@ angular.module('styleguide')
 
 
 function StagesCtrl($scope) {
-  $scope.hello = '\'Allo, world!';
+  $scope.hello = '\'Hello, world!';
 }
