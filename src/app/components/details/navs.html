@@ -5,41 +5,30 @@
     <h3>Tab Navigation</h3>
 </div>
 
-<div class="row">
-  <div class="col-md-6" ng-prism-copy="navTabs">
+<div class="row" >
 
-    <!-- Nav tabs -->
-    <ul id="fe-tab" class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active"><a href="#home1" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-      <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-      <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-      <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
-    </ul>
-
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="home1">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-      </div>
-      <div role="tabpanel" class="tab-pane" id="profile">
-        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
-      </div>
-      <div role="tabpanel" class="tab-pane" id="messages">
-        <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
-      </div>
-      <div role="tabpanel" class="tab-pane" id="settings">
-        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-      </div>
-    </div>
+  <div class="col-md-8" ng-prism-copy="navTabs">
+    <tabset>
+      <tab heading="static title">
+        <h5><b>The static heading for tab content</b></h5>
+        <p>Slow-carb plaid 8-bit viral, beard umami Pinterest. Try-hard cold-pressed narwhal mumblecore squid, gentrify Echo Park Williamsburg ethical sriracha. You probably haven't heard of them crucifix mixtape, leggings normcore selvage Schlitz seitan. Bespoke whatever vinyl PBR leggings. </p>
+      </tab>
+      <tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disabled="tab.disabled">         
+        {{tab.content}}
+      </tab>
+      <tab select="alertMe()">
+        <tab-heading>
+          <i class="glyphicon glyphicon-bell"></i> Alert!
+        </tab-heading>
+        I've got an HTML heading, and a select callback. Pretty cool!
+      </tab>
+    </tabset>
   </div>
-
-    <hr>
-</div> <!-- /.row -->
+</div>
 
 <div class="row">
   <div ng-prism-paste="navTabs:markup"></div>
 </div>
-
 
 <div class="page-header">
     <h3>Pagination</h3>
@@ -53,13 +42,13 @@
           <span aria-hidden="true">&laquo;</span>
         </a>
       </li>
-      <li><a href="#">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">5</a></li>
+      <li><a href="javascript:void(0)">1</a></li>
+      <li><a href="javascript:void(0)">2</a></li>
+      <li><a href="javascript:void(0)">3</a></li>
+      <li><a href="javascript:void(0)">4</a></li>
+      <li><a href="javascript:void(0)">5</a></li>
       <li>
-        <a href="#" aria-label="Next">
+        <a href="javascript:void(0)" aria-label="Next">
           <span aria-hidden="true">&raquo;</span>
         </a>
       </li>
@@ -78,8 +67,8 @@
 
 <div class="row" ng-prism-copy="navBreadcrumb">
   <ol class="breadcrumb">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Library</a></li>
+    <li><a href="javascript:void(0)">Home</a></li>
+    <li><a href="javascript:void(0)">Library</a></li>
     <li class="active">Data</li>
   </ol>
 </div>
