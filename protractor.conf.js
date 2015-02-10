@@ -25,7 +25,7 @@ exports.config = {
   onPrepare: function() {
       // Add a screenshot reporter and store screenshots to `e2eresults`: 
       jasmine.getEnv().addReporter(new HtmlReporter({
-         baseDirectory: 'e2eresults'
+         baseDirectory: 'reports/e2e'
       }));
    }
 };

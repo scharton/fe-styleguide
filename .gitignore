@@ -6,4 +6,4 @@ dist/
 *.sublime-project
 *.sublime-workspace
 npm-debug.log
-e2eresults/
+reports/
