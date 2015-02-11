@@ -17,7 +17,7 @@ module.exports = function(config) {
       'src/app/**/{*.js,!(*.spec.js)}':   ['coverage']
     },
     junitReporter: {
-      outputFile: 'reports/unit/xunit.xml'
+      outputFile: 'reports/unit/junit.xml'
     },
     coverageReporter: {
       dir: 'reports/coverage',
