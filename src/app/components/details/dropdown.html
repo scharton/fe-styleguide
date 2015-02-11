@@ -50,17 +50,49 @@
 
 <div class="col-md-12">
   <!--text link dropdown -->
-  <div class="dropdown" dropdown on-toggle="toggled(open)">   
-    <a href class="dropdown-toggle" dropdown-toggle>
-      Text link dropdown menus
-    </a>  
-    <ul class="dropdown-menu">
-      <li ng-repeat="choice in items">
-        <a href>{{choice}}</a>
-      </li>
-    </ul>
-  </div>
+  <p>
+    <div class="dropdown" dropdown on-toggle="toggled(open)">   
+      <a href class="dropdown-toggle" dropdown-toggle>
+        Text link dropdown menus
+      </a>  
+      <ul class="dropdown-menu">
+        <li ng-repeat="choice in items">
+          <a href>{{choice}}</a>
+        </li>
+      </ul>
+    </div>
+  </p>
   <!--Single button dropdown-->
+  <p>
+    <div class="btn-group" dropdown is-open="status.isopen">
+      <button type="button" class="btn btn-warning dropdown-toggle" ng-disable="disabled">
+        Button dropdown <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href>Action</a></li>
+        <li><a href>Another action</a></li>
+        <li><a href>A third action</a></li>
+        <li class="divider"></li>
+        <li><a href>Separate Action</a></li>
+      </ul>
+    </div>
+  </p>
+
+  <!--Split button dropdown-->
+  <p>
+    <div class="btn-group" dropdown>
+      <button type="button" class="btn btn-warning dropdown-toggle" ng-disable="disabled">
+        Button dropdown <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href>Action</a></li>
+        <li><a href>Another action</a></li>
+        <li><a href>A third action</a></li>
+        <li class="divider"></li>
+        <li><a href>Separate Action</a></li>
+      </ul>
+    </div>
+  </p>
 
 
 </div>

@@ -4,7 +4,7 @@ angular.module('styleguide')
   .controller('ComponentsCtrl', ComponentsCtrl);
 
 
-function ComponentsCtrl($scope, $window) {
+function ComponentsCtrl($scope, $window, $log) {
 
   $scope.components = [{
       id: 'colors',
@@ -96,6 +96,27 @@ function ComponentsCtrl($scope, $window) {
   $scope.status = {
     isFirstOpen: true,
     isFirstDisabled: false
+  };
+
+  //Dropdown menus
+  $scope.items = [
+    'The first item',
+    'The second item',
+    'The third item'
+  ];
+
+  $scope.status = {
+    isopen: false
+  };
+
+  $scope.toggled = function(open) {
+    $log.log('Dropdown is now: ', open);
+  };
+
+  $scope.toggleDropdown = function($event) {
+    $event.preventDefault();
+    $event.stopePropagation();
+    $scope.status.isopen = !$scope.status.isopen;
   };
 
 
