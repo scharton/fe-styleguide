@@ -63,6 +63,7 @@
     <delete dir="${dist}"/>
     <delete dir="${bower_components}"/>
     <delete dir="${node_modules}"/>
+    <delete dir="reports"/>
  </target>
 
  <target name="all" description="Create all build artifacts." depends="clean, npm_install, bower_install, gulp_build, create_dist">
