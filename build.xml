@@ -1,0 +1,71 @@
+<project name="StyleGuide" default="all" basedir=".">
+  <description>Build file for StyleGuide </description>
+
+  <!-- set global properties for this build -->
+  <property name='build' location='build' />
+  <property name='app.version' value='1.0'/>
+  <property name='app.name' value='StyleGuideApp'/>
+  <property name='distro-name' value='styleguide-app-${app.version}'/>
+  <property name="deploy"  location="deploy"/>
+  <property name="dist"  location="dist"/>
+  <property name="bower_components" location="bower_components"/>
+  <property name="node_modules" location="node_modules"/>
+  <tstamp><format property='build.time' pattern='yyyy-MM-dd HH:mm:ss'/></tstamp>
+
+  <!-- Inspect the environment, to see if a deployment host is currently running. -->
+  <condition property='deployment.server.running' value='true' else='false'>
+       <socket port='8081' server='127.0.0.1' />
+  </condition>
+
+  <target name="init">
+      <!-- Create the time stamp -->
+      <echo>
+       Application: ${app.name} ${app.version}
+       Build File : ${ant.file}
+       Run Date   : ${build.time}
+       Run by     : ${user.name}
+       Build Dir  : ${build}
+       Base Dir   : ${basedir}
+       Deployment host running: ${deployment.server.running}
+     </echo>
+  </target>
+
+  <target name="npm_install" description="Install NPM dependencies">
+      <exec executable="npm">
+        <arg value="install"/>
+      </exec>
+ </target>
+
+ <target name="bower_install" description="Install Bower dependencies">
+      <exec executable="bower">
+         <arg value="install"/>
+      </exec>
+ </target>
+
+ <target name="gulp_build" description="Gulp build">
+     <exec executable="gulp" failonerror="true">
+     </exec>
+ </target>
+
+ <target name="create_dist" depends="gulp_build" description="generate the distribution" >
+    <!-- Create the distribution directory -->
+    <mkdir dir="${deploy}"/>
+
+    <!-- Put everything in dist into the StyleGuide-${DSTAMP}.zip file -->
+    <zip destfile="${deploy}/StyleGuide-${DSTAMP}.zip" duplicate="preserve">
+       <zipfileset dir="${dist}"/>
+    </zip>
+ </target>
+
+ <target name="clean" description="clean up" >
+    <!-- Delete the ${deploy} and ${dist} directory trees -->
+    <delete dir="${deploy}"/>
+    <delete dir="${dist}"/>
+    <delete dir="${bower_components}"/>
+    <delete dir="${node_modules}"/>
+ </target>
+
+ <target name="all" description="Create all build artifacts." depends="clean, npm_install, bower_install, gulp_build, create_dist">
+     <echo>Finished creating all build artifacts.</echo>
+ </target>
+</project>
