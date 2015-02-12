@@ -8,24 +8,20 @@ var browserSync = require('browser-sync');
 
 // Downloads the selenium webdriver
 gulp.task('webdriver-update', plugins.protractor.webdriver_update);
-
 gulp.task('webdriver-standalone', plugins.protractor.webdriver_standalone);
 
 
-function runProtractor (done) {
-  var testFiles = [
-    'test/e2e/**/*.js'
-  ];
+function runProtractor(done) {
 
-  gulp.src(testFiles)
+  gulp.src('e2e/**.*.js')
     .pipe(plugins.protractor.protractor({
       configFile: 'protractor.conf.js',
     }))
-    .on('error', function (err) {
+    .on('error', function(err) {
       // Make sure failed tests cause gulp to exit non-zero
       throw err;
     })
-    .on('end', function () {
+    .on('end', function() {
       // Close browser sync server
       browserSync.exit();
       done();

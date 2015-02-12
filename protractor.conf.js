@@ -21,9 +21,9 @@ exports.config = {
     showColors: true,
     defaultTimeoutInterval: 30000
   },
-  
+
   onPrepare: function() {
-      // Add a screenshot reporter and store screenshots to `e2eresults`: 
+      // Add a screenshot reporter and store screenshots to `e2eresults`:
       jasmine.getEnv().addReporter(new HtmlReporter({
          baseDirectory: 'e2eresults'
       }));
