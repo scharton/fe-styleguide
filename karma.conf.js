@@ -3,23 +3,30 @@
 module.exports = function(config) {
 
   config.set({
-    plugins : [
+    autoWatch: false,
+
+    frameworks: ['jasmine'],
+
+    browsers : ['PhantomJS'],
+
+    plugins: [
       'karma-phantomjs-launcher',
       'karma-jasmine',
-      'karma-coverage',
       'karma-junit-reporter',
+      'karma-coverage',
       'karma-htmlfile-reporter'
     ],
-    autoWatch : false,
-    frameworks: ['jasmine'],
-    browsers : ['PhantomJS'],
+
     reporters: ['progress', 'junit', 'coverage','html'],
+
     preprocessors:    {
-      'src/app/**/{*.js,!(*.spec.js)}':   ['coverage']
+      'src/app/**/{*.js,!(*.spec.js)}': ['coverage']
     },
+
     junitReporter: {
       outputFile: 'reports/unit/junit.xml'
     },
+
     coverageReporter: {
       dir: 'reports/coverage',
       reporters: [
@@ -33,8 +40,10 @@ module.exports = function(config) {
         }
       ]
     },
+
     htmlReporter: {
       outputFile: 'reports/unit/report.html'
     }
+
   });
 };
