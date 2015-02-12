@@ -7,7 +7,7 @@ module.exports = function(config) {
 
     frameworks: ['jasmine'],
 
-    browsers : ['PhantomJS'],
+    browsers: ['PhantomJS'],
 
     plugins: [
       'karma-phantomjs-launcher',
@@ -17,9 +17,9 @@ module.exports = function(config) {
       'karma-htmlfile-reporter'
     ],
 
-    reporters: ['progress', 'junit', 'coverage','html'],
+    reporters: ['progress', 'junit', 'coverage', 'html'],
 
-    preprocessors:    {
+    preprocessors: {
       'src/app/**/{*.js,!(*.spec.js)}': ['coverage']
     },
 
