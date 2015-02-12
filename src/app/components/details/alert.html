@@ -1,0 +1,17 @@
+<h2>Notifications</h2>
+<hr>
+
+<div class="page-header">
+   <h3>Alerts</h3>
+</div>
+
+<div class="row" >
+
+  <div class="col-md-8" ng-prism-copy="alertSample">
+  	<alert ng-repeat="alert in alerts" 
+  			type="{{alert.type}}"
+  			close="closeAlert($index)">
+			{{alert.msg}}
+  	</alert>
+  	<button class='btn btn-default' ng-click="addAlert()">Add an alert</button>
+  </div>

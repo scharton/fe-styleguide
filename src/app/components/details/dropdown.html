@@ -1,0 +1,98 @@
+<h2>Dropdown Elements</h2>
+<hr>
+
+<div class="col-md-12">
+    <h4>Accordion</h4>
+</div>
+
+<div class="row">
+  <div class="col-md-8" ng-prism-copy="navAccordion">
+    
+    <label class="checkbox">
+      <input type="checkbox" ng-model="oneAtATime">
+      Open only one at a time
+    </label>
+
+    <accordion close-others="oneAtATime">
+      
+      <accordion-group heading="Default expanded static header" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+        This content is straight in the template.
+      </accordion-group>
+
+      <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+        {{group.content}}
+      </accordion-group>
+
+      <accordion-group heading="Dynamic Body Content">
+        <p>The body of this accordion group grows to fi any content</p>
+      </accordion-group>
+
+      <accordion-group is-open="status.open">
+        <accordion-heading>
+          I can have all sorts of markup. <i class="pull-right fa" ng-class="{'fa-chevron-down':status.open,
+                                                                              'fa-chevron-up':!status.open}"></i>
+        </accordion-heading>
+          Toggling accordioon with fontaweseome arrow icon.
+      </accordion-group>
+
+    </accordion>
+
+  </div>
+</div>
+
+<div class="col-md-12">
+  <div ng-prism-paste="navAccordion:markup"></div>
+</div>
+
+<div class="col-md-12">
+    <h4>Dropdown Menus</h4>
+</div>
+
+<div class="col-md-12">
+  <!--text link dropdown -->
+  <p>
+    <div class="dropdown" dropdown on-toggle="toggled(open)">   
+      <a href class="dropdown-toggle" dropdown-toggle>
+        Text link dropdown menus
+      </a>  
+      <ul class="dropdown-menu">
+        <li ng-repeat="choice in items">
+          <a href>{{choice}}</a>
+        </li>
+      </ul>
+    </div>
+  </p>
+  <!--Single button dropdown-->
+  <p>
+    <div class="btn-group" dropdown is-open="status.isopen">
+      <button type="button" class="btn btn-warning dropdown-toggle" ng-disable="disabled">
+        Button dropdown <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href>Action</a></li>
+        <li><a href>Another action</a></li>
+        <li><a href>A third action</a></li>
+        <li class="divider"></li>
+        <li><a href>Separate Action</a></li>
+      </ul>
+    </div>
+  </p>
+
+  <!--Split button dropdown-->
+  <p>
+    <div class="btn-group" dropdown>
+      <button type="button" class="btn btn-warning dropdown-toggle" ng-disable="disabled">
+        Button dropdown <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href>Action</a></li>
+        <li><a href>Another action</a></li>
+        <li><a href>A third action</a></li>
+        <li class="divider"></li>
+        <li><a href>Separate Action</a></li>
+      </ul>
+    </div>
+  </p>
+
+
+</div>
