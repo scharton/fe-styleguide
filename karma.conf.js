@@ -7,12 +7,13 @@ module.exports = function(config) {
       'karma-phantomjs-launcher',
       'karma-jasmine',
       'karma-coverage',
-      'karma-junit-reporter'
+      'karma-junit-reporter',
+      'karma-htmlfile-reporter'
     ],
     autoWatch : false,
     frameworks: ['jasmine'],
     browsers : ['PhantomJS'],
-    reporters: ['progress', 'junit', 'coverage'],
+    reporters: ['progress', 'junit', 'coverage','html'],
     preprocessors:    {
       'src/app/**/{*.js,!(*.spec.js)}':   ['coverage']
     },
@@ -31,6 +32,9 @@ module.exports = function(config) {
           subdir: '.'
         }
       ]
+    },
+    htmlReporter: {
+      outputFile: 'reports/unit/report.html'
     }
   });
 };
