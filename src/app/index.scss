@@ -31,7 +31,7 @@
 }
 
 .body-view {
-  padding: 20px 0;
+  padding: 85px 0;
 }
 
 .dark-bg {
@@ -68,6 +68,30 @@ pre[class*="language-"] {
   border: solid 1px #ccc;
 }
 
+//demopage side-nav
+#components-c .nav-list .nav li{
+  
+  margin: 10px 0;
+
+  &.active{
+    & > a {
+      border-left: 2px solid #1fa0c8;
+      font-weight: 600;
+    }
+  }
+  
+  & > a {
+    padding: 5px 15px;
+    background-color: transparent;
+    border-left: 2px solid transparent;
+  }
+  & > a:focus,
+  & > a:hover,
+  & > a:active, & > a.active{
+    border-left: 2px solid #187d9c;
+  }
+
+}
 
 //carousel customization
 .carousel-inner {

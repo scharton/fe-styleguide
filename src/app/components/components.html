@@ -2,7 +2,7 @@
 
   <!-- Components list -->
   <div class="col-md-2 nav-list">
-    <ul class="nav nav-pills nav-stacked">
+    <ul class="nav nav-stacked affix">
       <li role="presentation" ui-sref-active="active" ng-repeat="component in components">
         <a ui-sref="components.details({ componentId: component.id })" ng-bind="component.name"></a>
       </li>
