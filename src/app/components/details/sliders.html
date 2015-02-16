@@ -1,14 +1,16 @@
 <h2>Sliders</h2>
 <hr>
 
-<div ng-prism-copy="feSlider">
-  <div style="padding: 30px 30px 90px;" class="clearfix">
-    <div fe-slider="sliderOptions" ng-model="sliderValue" id="slider-test" class="fe-slider-lg"></div>
-  </div>
-  <div class="input-group">
-    <span class="input-group-addon">Change the slider</span>
-    <input type="number" min="0" max="100" class="form-control text-center" ng-model="sliderValue">
-    <span class="input-group-addon">% income</span>
+<div ng-controller="SliderCtrl">
+  <div ng-prism-copy="feSlider">
+    <div style="padding: 30px 30px 90px;" class="clearfix">
+      <div fe-slider="sliderOptions" ng-model="sliderValue" id="slider-test" class="fe-slider-lg"></div>
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon">Change the slider</span>
+      <input type="number" min="0" max="100" class="form-control text-center" ng-model="sliderValue">
+      <span class="input-group-addon">% income</span>
+    </div>
   </div>
 </div>
 

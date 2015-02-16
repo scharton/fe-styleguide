@@ -1,0 +1,40 @@
+<h2>Tooltip</h2>
+<hr>
+<div ng-controller="TooltipDemoCtrl">
+	<div class="row">
+		<div class="col-md-6">
+		  <div class="form-group">
+		    <label>Dynamic Tooltip Link Text</label>
+		    <input type="text" ng-model="dynamicTooltipLink" class="form-control">
+		  </div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+		  <div class="form-group">
+		    <label>Dynamic Tooltip Content Text</label>
+		    <input type="text" ng-model="dynamicTooltipContent" class="form-control">
+		  </div>
+		</div>
+	</div>
+	<p class="fe-p-lg" style="line-height: 1.6;">
+		Bacon <a href="javascript:void(0)" tooltip="{{dynamicTooltipContent}}">{{dynamicTooltipLink}}</a>, ipsum dolor amet capicola frankfurter tail tongue, pancetta cupim beef boudin kielbasa filet mignon fatback pork belly strip steak alcatra porchetta at 
+		<a href="javascript:void(0)" tooltip-placement="left" tooltip="On the left">Show on left</a> strip steak bacon turducken
+		<a href="javascript:void(0)" tooltip-placement="right" tooltip="On the right">Show on right</a> fatback pancetta filet mignon, 
+		<a href="javascript:void(0)" tooltip-placement="bottom" tooltip="On the bottom">Show on bottom</a> pig cow corned beef doner. 
+		<a href="javascript:void(0)" tooltip-animation="false" tooltip="No fading effects">No fadding</a> Jerky flank cow, ham jowl bacon pig corned beef beef. Ribeye salami shankle boudin 
+		<a href="javascript:void(0)" tooltip-popup-delay='1000' tooltip='appears with delay'>No fadding</a> brisket alcatra pork bresaola turducken filet mignon. Salami tail pork loin meatball pork belly jowl andouille ribeye prosciutto cupim jerky pig.
+	</p>
+
+	<p class="fe-p-lg">
+		I can contain HTML. <a href="#" tooltip-html-unsafe="{{htmlTooltip}}">Check me out!</a>
+	</p>
+
+	<form rol="form">
+		<div class="form-group">
+			<label>Or use cusom triggers, like focus: </label>
+			<input type="text" value="Click me!" tooltip="See? Now click away..." tooltip-trigger="focus" tooltip-replacement="right" class="form-control" />
+		</div>
+	</form>
+</div>
+

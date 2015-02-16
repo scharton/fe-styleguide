@@ -45,12 +45,27 @@
 </div>
 
 <div class="col-md-12">
-    <h4>Dropdown Menus</h4>
+    <h4>Collapse</h4>
+</div>
+
+<div class="col-md-12" ng-prism-copy="navCollapse">
+  <button class="btn btn-default" ng-click="isCollapsed = !isCollapsed">toggle collapse</button>
+  <div collapse="isCollapsed">
+    <p class="well well-lg">Hide content such as disclaimer or footnote</p>
+  </div>
 </div>
 
 <div class="col-md-12">
+  <div ng-prism-paste="navCollapse:markup"></div>
+</div>
+
+<div class="col-md-12">
+    <h4>Dropdown Menus</h4>
+</div>
+
+<div class="col-md-12" ng-prism-copy="navDropdown">
   <!--text link dropdown -->
-  <p>
+  <div class="col-md-4">
     <div class="dropdown" dropdown on-toggle="toggled(open)">   
       <a href class="dropdown-toggle" dropdown-toggle>
         Text link dropdown menus
@@ -61,38 +76,47 @@
         </li>
       </ul>
     </div>
-  </p>
+  </div>
+
   <!--Single button dropdown-->
-  <p>
+  <div class="col-md-4" >
     <div class="btn-group" dropdown is-open="status.isopen">
-      <button type="button" class="btn btn-warning dropdown-toggle" ng-disable="disabled">
-        Button dropdown <span class="caret"></span>
+      <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle >
+        Button dropdown</span>
       </button>
       <ul class="dropdown-menu" role="menu">
-        <li><a href>Action</a></li>
-        <li><a href>Another action</a></li>
-        <li><a href>A third action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">A third action</a></li>
         <li class="divider"></li>
-        <li><a href>Separate Action</a></li>
+        <li><a href="#">Separate Action</a></li>
       </ul>
     </div>
-  </p>
+  </div>
 
   <!--Split button dropdown-->
-  <p>
+  <div class="col-md-4" >
     <div class="btn-group" dropdown>
-      <button type="button" class="btn btn-warning dropdown-toggle" ng-disable="disabled">
-        Button dropdown <span class="caret"></span>
+      <button type="button" class="btn btn-warning">
+        Split Button dropdown 
+      </button>
+      <button type="button" class="btn btn-warning" dropdown-toggle>
+        <span class="fa fa-angle-down"></span>
+        <span class="sr-only">Split button!</span>
       </button>
       <ul class="dropdown-menu" role="menu">
-        <li><a href>Action</a></li>
-        <li><a href>Another action</a></li>
-        <li><a href>A third action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">A third action</a></li>
         <li class="divider"></li>
-        <li><a href>Separate Action</a></li>
+        <li><a href="#">=Separate Action</a></li>
       </ul>
     </div>
-  </p>
-
+  </div>
 
 </div>
+
+<div class="col-md-12">
+  <div ng-prism-paste="navDropdown:markup"></div>
+</div>
+

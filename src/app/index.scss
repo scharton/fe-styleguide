@@ -71,7 +71,7 @@ pre[class*="language-"] {
 //demopage side-nav
 #components-c .nav-list .nav li{
   
-  margin: 10px 0;
+  margin: 5px 0;
 
   &.active{
     & > a {
@@ -81,7 +81,7 @@ pre[class*="language-"] {
   }
   
   & > a {
-    padding: 5px 15px;
+    padding: 4px 15px;
     background-color: transparent;
     border-left: 2px solid transparent;
   }

@@ -7,41 +7,33 @@ angular.module('styleguide')
 function ComponentsCtrl($scope, $window, $log) {
 
   $scope.components = [{
-      id: 'colors',
-      name: 'Colors'
+      id: 'alert', name: 'Alerts'
     }, {
-      id: 'fonts',
-      name: 'Fonts'
+      id: 'Buttons', name: 'buttons'
     }, {
-      id: 'buttons',
-      name: 'Buttons'
+      id: 'colors', name: 'Colors'
     }, {
-      id: 'container',
-      name: 'Containers'
+      id: 'container', name: 'Containers'
     }, {
-      id: 'navs',
-      name: 'Navigations'
+      id: 'dropdown', name: 'Dropdowns'
     }, {
-       id: 'dropdown',
-      name: 'Dropdowns'
+       id: 'fonts', name: 'Fonts'
     }, {
-      id: 'tooltip',
-      name: 'Tooltips'
+      id: 'form', name: 'Forms'
     }, {
-      id: 'modal',
-      name: 'Modals'
+      id: 'modal', name: 'Modals'
     }, {
-      id: 'table',
-      name: 'Table'
+      id: 'navs', name: 'Navs'
     }, {
-      id: 'form',
-      name: 'Forms'
+      id: 'popover', name: 'Popover'
     }, {
-      id: 'sliders',
-      name: 'Sliders'
+      id: 'progressbar', name: 'Progressbar'
     }, {
-      id: 'alert',
-      name: 'Alerts'
+      id: 'sliders', name: 'Sliders'
+    }, {
+      id: 'table', name: 'Tables'
+    }, {
+      id: 'tooltip', name: 'Tooltips'
     }
   ];
 
@@ -98,6 +90,9 @@ function ComponentsCtrl($scope, $window, $log) {
     isFirstDisabled: false
   };
 
+  //Collapse
+  $scope.isCollapsed = false;
+
   //Dropdown menus
   $scope.items = [
     'The first item',
@@ -119,21 +114,4 @@ function ComponentsCtrl($scope, $window, $log) {
     $scope.status.isopen = !$scope.status.isopen;
   };
 
-
-
-  // Slider
-  $scope.sliderValue = 40;
-  $scope.sliderOptions = {
-    min: 0,
-    max: 100,
-    animate: 'fast',
-    current: 20,
-    //currentLabel: 'Current',
-    topPopover: function(newValue) {
-      return newValue + '%';
-    },
-    bottomPopover: function(newValue) {
-      return newValue > 20 ? 'Greater than 20%' : false;
-    }
-  };
 }
