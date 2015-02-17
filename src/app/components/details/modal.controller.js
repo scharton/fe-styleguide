@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('styleguide')
-  .controller('ModalDemoCtrl', ModalDemoCtrl);
- /* .controller('ModalInstanceCtrl', ModalInstanceCtrl);*/
+  .controller('ModalDemoCtrl', ModalDemoCtrl)
+  .controller('ModalInstanceCtrl', ModalInstanceCtrl);
 
   function ModalDemoCtrl ($scope, $modal, $log) {
   	$scope.items = ['item1', 'item2', 'item3'];
 
-  /*  $scope.open = function (size) {
+    $scope.open = function (size) {
 
       var modalInstance = $modal.open({
         templateUrl: 'myModalContent.html',
@@ -19,18 +19,16 @@ angular.module('styleguide')
           }
         }
       });
-    };*/
-  }
-/*
-      modalInstance.result.then(function (selectedItem) {
+    };
+
+    modalInstance.result.then(function (selectedItem) {
         $scope.selected = selectedItem;
       }, function () {
         $log.info('Modal dismissed at: ' + new Date());
       });
-    };*/
-//  }
+    }
 
-/*  function ModalInstanceCtrl($scope, $modalInstance, items) {
+  function ModalInstanceCtrl($scope, $modalInstance, items) {
     $scope.items = items;
     $scope.selected = {
       item: $scope.items[0]
@@ -44,4 +42,4 @@ angular.module('styleguide')
       $modalInstance.dismiss('cancel');
     };
   }
-*/
+
