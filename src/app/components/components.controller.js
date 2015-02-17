@@ -9,7 +9,7 @@ function ComponentsCtrl($scope, $window, $log) {
   $scope.components = [{
       id: 'alert', name: 'Alerts'
     }, {
-      id: 'Buttons', name: 'buttons'
+      id: 'buttons', name: 'Buttons'
     }, {
       id: 'colors', name: 'Colors'
     }, {

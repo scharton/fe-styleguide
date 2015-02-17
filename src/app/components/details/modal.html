@@ -1,0 +1,33 @@
+<h2>Modals</h2>
+<hr>
+<div >
+	<div class="col-md-12" ng-controller="ModalDemoCtrl">
+		<script tyle="text/ng-template" id="myModalContent.html">
+			<div class="modal-header">
+				<h3 class="modal-title">Your modal title is here</h3>
+			</div>
+			<div class="modal-body">
+				<ul>
+					<li ng-repeat="item in items">
+						<a ng-click="selected.item = item">{{ item }}</a>
+					</li>
+				</ul>
+				Selected: <b>{{ selected.item }}</b>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary" ng-click="ok()">OK</button>
+				<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+			</div>
+		</script>
+
+		<button class="btn btn-primary" ng-click="open()">Default modal</button>
+		<button class="btn btn-warning" ng-click="open('lg')">Large modal</button>
+		<button class="btn btn-success" ng-click="open('sm')">Small modal</button>
+
+		<div ng-show="selected"><p>Selection from a modal: {{selected}}</p></div>
+	</div>
+</div>
+
+<div class="col-md-12">
+	<div></div>
+</div>

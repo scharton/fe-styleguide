@@ -1,2 +1,67 @@
 <h2>Popover</h2>
 <hr>
+
+<div class="col-md-12">
+	<div ng-controller="PopoverDemoCtrl">
+		<h4>Dynamic</h4>
+		<div class="form-group">
+			<label>Pop Text:</label>
+			<input type="text" ng-model="dynamicPopover" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Popup title:</label>
+			<input type="text" ng-model="dynamicPopvertitle" class="form-control">
+		</div>
+		<button popover="{{dynmaicPopover}}"
+				popoever-title="{{dynamicPopoverTitle}}"
+				class="btn btn-default">
+		Dynamic Popover
+		</button>
+	</div>
+	
+	<div class="row" style="padding: 20px 0;">
+		<h4 class="col-md-12" style="margin: 20px 0;">Positional</h4>
+		<div class="col-md-2">
+			<button popover-placement="top" popover="On the top!" class="btn btn-default">
+				On Top
+			</button>
+		</div>
+		<div class="col-md-2">
+			<button popover-placement="left" popover="On the left!" class="btn btn-primary">
+				On Left
+			</button>
+		</div>
+		<div class="col-md-2">
+			<button popover-placement="right" popover="On the right!" class="btn btn-warning">
+				On Right
+			</button>
+		</div>
+		<div class="col-md-2">
+			<button popover-placement="bottom" popover="On the bottom!" class="btn btn-success">
+				On Bottom
+			</button>
+		</div>
+	</div>
+
+	<div class="col-md-12" style="padding: 20px 0;">
+		<h4 style="margin: 20px 0;">Triggers</h4>
+		<p>
+			<button popover="I appeared on mouse enter"
+							popover-trigger="mouseenter"
+							popover-title="Give me a title."
+							class="btn btn-default"> Mouseenter</button>
+		</p>
+		<input type="text" value="Click me!"
+						popover="Appear on focus. Click away and I'm gone!"
+						popover-trigger="focus"
+						class="form-control">
+	</div>
+
+	<div class="col-md-12" style="padding: 20px 0;">
+		<h4 style="margin: 20px 0;">Fadding out</h4>
+		<button Popover-animation="true" 
+						popover="I fade in and out at 0.15s speed!" 
+						class="btn btn-warning">fading transition</button>
+	</div>
+
+</div>
