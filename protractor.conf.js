@@ -2,15 +2,64 @@
 
 var HtmlReporter = require('protractor-html-screenshot-reporter');
 
-exports.config = {
-  // The address of a running selenium server.
-  //seleniumAddress: 'http://localhost:4444/wd/hub',
-  //seleniumServerJar: deprecated, this should be set on node_modules/protractor/config.json
+var baseUrl = 'http://127.0.0.1:3000';
 
-  // Capabilities to be passed to the webdriver instance.
-  capabilities: {
-    'browserName': 'chrome'
-  },
+var multiCapabilities = [{
+  'browserName': 'chrome'
+}];
+
+// if sauce env vars are set, tests will run on sauce labs
+if (process.env.SAUCE_USERNAME) {
+  baseUrl = 'http://fe-styleguide.s3-website-us-west-1.amazonaws.com';
+
+  multiCapabilities = [{
+    'browserName': 'chrome',
+    'build': process.env.BUILD_NUMBER,
+    'name': 'Fe-Styleguide tests',
+    'version': '34',
+    'selenium-version': '2.42.2',
+    'platform': 'OS X 10.9'
+  }, {
+    'browserName': 'chrome',
+    'build': process.env.BUILD_NUMBER,
+    'name': 'Fe-Styleguide tests',
+    'version': '35',
+    'selenium-version': '2.42.2',
+    'platform': 'OS X 10.9'
+  }, {
+    'browserName': 'firefox',
+    'build': process.env.BUILD_NUMBER,
+    'name': 'Fe-Styleguide tests',
+    'version': '29',
+    'selenium-version': '2.42.2'
+  }, {
+    'browserName': 'firefox',
+    'build': process.env.BUILD_NUMBER,
+    'name': 'Fe-Styleguide tests',
+    'version': '30',
+    'selenium-version': '2.42.2'
+  }, {
+    'browserName': 'internet explorer',
+    'build': process.env.BUILD_NUMBER,
+    'name': 'Fe-Styleguide tests',
+    'version': '11',
+    'selenium-version': '2.42.2',
+    'platform': 'Windows 7'
+  }, {
+    'browserName': 'internet explorer',
+    'build': process.env.BUILD_NUMBER,
+    'name': 'Fe-Styleguide tests',
+    'version': '10',
+    'selenium-version': '2.42.2',
+    'platform': 'Windows 7'
+  }];
+}
+
+
+
+exports.config = {
+  sauceUser: process.env.SAUCE_USERNAME,
+  sauceKey: process.env.SAUCE_ACCESS_KEY,
 
   // Spec patterns are relative to the current working directly when
   // protractor is called.
@@ -19,7 +68,8 @@ exports.config = {
   // Options to be passed to Jasmine-node.
   jasmineNodeOpts: {
     showColors: true,
-    defaultTimeoutInterval: 30000
+    defaultTimeoutInterval: 30000,
+    showTiming: true
   },
 
   onPrepare: function() {
@@ -27,5 +77,10 @@ exports.config = {
       jasmine.getEnv().addReporter(new HtmlReporter({
          baseDirectory: 'reports/e2e'
       }));
-   }
+   },
+
+  baseUrl: baseUrl,
+
+  // Capabilities to be passed to the webdriver instance.
+  multiCapabilities: multiCapabilities
 };
