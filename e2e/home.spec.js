@@ -5,7 +5,7 @@ describe('The home view', function () {
   var page;
 
   beforeEach(function () {
-    browser.get('http://localhost:3000/index.html');
+    browser.get('index.html');
     page = require('./home.po');
   });
 

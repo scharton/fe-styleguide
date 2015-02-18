@@ -3,6 +3,8 @@
 var HtmlReporter = require('protractor-html-screenshot-reporter');
 
 exports.config = {
+  sauceUser: process.env.SAUCE_USERNAME,
+  sauceKey: process.env.SAUCE_ACCESS_KEY,
   // The address of a running selenium server.
   //seleniumAddress: 'http://localhost:4444/wd/hub',
   //seleniumServerJar: deprecated, this should be set on node_modules/protractor/config.json
@@ -27,5 +29,7 @@ exports.config = {
       jasmine.getEnv().addReporter(new HtmlReporter({
          baseDirectory: 'reports/e2e'
       }));
-   }
+   },
+
+   baseUrl: 'http://fe-styleguide.s3-website-us-west-1.amazonaws.com'
 };
