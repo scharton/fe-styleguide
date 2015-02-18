@@ -115,3 +115,4 @@ function ComponentsCtrl($scope, $window, $log) {
   };
 
 }
+

@@ -20,13 +20,7 @@ angular.module('styleguide')
         }
       });
     };
-
-    modalInstance.result.then(function (selectedItem) {
-        $scope.selected = selectedItem;
-      }, function () {
-        $log.info('Modal dismissed at: ' + new Date());
-      });
-    }
+  }
 
   function ModalInstanceCtrl($scope, $modalInstance, items) {
     $scope.items = items;
@@ -40,6 +34,7 @@ angular.module('styleguide')
 
     $scope.cancel = function() {
       $modalInstance.dismiss('cancel');
+
     };
   }
 
