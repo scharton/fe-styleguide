@@ -1,9 +1,45 @@
-<h2>Modals</h2>
+<h2>Progressbar</h2>
 <hr>
-<div class="col-md-12" ng-prism-copy="modals">
-	<div class="col-md-8" ng-controller="ProgressBarCtrl">
-		<div>
-			<progressbar vlaue="55"></progressbar>
+<div class="col-md-12" ng-prism-copy="modals" style="margin-top: 20px;">
+	<div ng-controller="progress1Ctrl">
+		<h4>Color changing progress bar</h4>
+
+		<div class="col-md-8" >
+			
+			<progressbar value="value" type="{{type}}">
+				{{value}}%
+			</progressbar>
+						
 		</div>
+		<div class="col-md-8">
+			<label>What's your progress?</label>
+			<select ng-model="value" ng-options="item as item + '%' for item in items">
+				<option value="">current progress</option>
+			</select>
+		</div>
+
 	</div>
+
+</div>
+
+<div class="col-md-12" ng-prism-copy="progress2" style="margin-top: 20px;">
+	<div ng-controller="progress2Ctrl">
+		<h4>Progress bar with tooltips</h4>
+
+		<div class="col-md-8" style="margin-top: 50px;">
+			<div class="progess">
+				<progressbar value="value" type="{{type}}" tooltip="You've achieved {{value}} %!">
+					{{value}}%
+				</progressbar>
+			</div>					
+		</div>
+		<div class="col-md-8">
+			<label>What's your progress?</label>
+			<select ng-model="value" ng-options="item as item + '%' for item in items">
+				<option value="">current progress</option>
+			</select>
+		</div>
+
+	</div>
+
 </div>
