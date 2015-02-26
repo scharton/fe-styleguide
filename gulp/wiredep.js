@@ -13,7 +13,7 @@ gulp.task('wiredep', function () {
   return gulp.src('src/index.html')
     .pipe(wiredep({
       directory: 'bower_components',
-      exclude: [/modernizr/]
+      exclude: [/modernizr/, /fe-env/]
     }))
     .pipe(gulp.dest('src'));
 });

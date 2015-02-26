@@ -4,12 +4,12 @@ var gulp = require('gulp');
 
 // Load gulp plugins
 var plugins = require('gulp-load-plugins')({
-  pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
+  pattern: ['gulp-*', 'uglify-save-license', 'del', 'run-sequence']
 });
 
 
 gulp.task('jshint', function () {
-  return gulp.src('src/{app,components}/**/*.js')
+  return gulp.src('src/{app,components,overrides}/**/*.js')
     .pipe(plugins.jshint())
     .pipe(plugins.jshint.reporter('jshint-stylish'));
 });
@@ -62,9 +62,18 @@ gulp.task('injector:sass', function () {
 
 
 /**
+ * Inject JavaScripts to index.html
+ */
+gulp.task('scripts', function(done) {
+  // Note: wiredep and injector:js have to run in sequence
+  plugins.runSequence('wiredep', 'injector:js', done);
+});
+
+
+/**
  * Inject application-level JS files into index.html
  */
-gulp.task('injector:js', ['jshint'], function () {
+gulp.task('injector:js', ['jshint', 'injector:localenv'], function () {
 
   var source = gulp.src([
       'src/{app,components}/**/*.js',
@@ -99,7 +108,7 @@ gulp.task('partials', function () {
 });
 
 
-gulp.task('html', ['wiredep', 'styles', 'injector:js', 'partials'], function () {
+gulp.task('html', ['styles', 'scripts', 'partials'], function () {
   // var htmlFilter = plugins.filter('*.html');
   var jsFilter = plugins.filter('**/*.js');
   var cssFilter = plugins.filter('**/*.css');

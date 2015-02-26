@@ -5,7 +5,8 @@ describe('The home view', function () {
   var page;
 
   beforeEach(function () {
-    browser.get('index.html');
+    // browser.get('index.html');
+    browser.get(fe.env.appBaseUrl + 'index.html');
     page = require('./home.po');
   });
 

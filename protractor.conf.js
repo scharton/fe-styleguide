@@ -1,16 +1,17 @@
-// An example configuration file.
+global.fe = { env: require('./bower_components/fe-env/dist/scripts/server/resolve').env };
 
 var HtmlReporter = require('protractor-html-screenshot-reporter');
-
-var baseUrl = 'http://127.0.0.1:3000';
 
 var multiCapabilities = [{
   'browserName': 'chrome'
 }];
 
+
 // if sauce env vars are set, tests will run on sauce labs
 if (process.env.SAUCE_USERNAME) {
-  baseUrl = 'http://fe-styleguide.s3-website-us-west-1.amazonaws.com';
+
+  // Override the application base URL
+  fe.env.appBaseUrl = 'http://fe-styleguide.s3-website-us-west-1.amazonaws.com/';
 
   multiCapabilities = [{
     'browserName': 'chrome',
@@ -73,13 +74,17 @@ exports.config = {
   },
 
   onPrepare: function() {
-      // Add a screenshot reporter and store screenshots to `e2eresults`:
-      jasmine.getEnv().addReporter(new HtmlReporter({
-         baseDirectory: 'reports/e2e'
-      }));
-   },
+    // Add a screenshot reporter and store screenshots to `e2eresults`:
+    jasmine.getEnv().addReporter(new HtmlReporter({
+      baseDirectory: 'reports/e2e'
+    }));
 
-  baseUrl: baseUrl,
+    // Convenient function to enable/disable test for non-angular pages
+    // TODO: if we have more convenient functions, extract them to a single component
+    browser.isAngularSite = function(flag) {
+      browser.ignoreSynchronization = !flag;
+    };
+  },
 
   // Capabilities to be passed to the webdriver instance.
   multiCapabilities: multiCapabilities

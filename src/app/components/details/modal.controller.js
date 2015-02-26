@@ -4,12 +4,12 @@ angular.module('styleguide')
   .controller('ModalDemoCtrl', ModalDemoCtrl)
   .controller('ModalInstanceCtrl', ModalInstanceCtrl);
 
-  function ModalDemoCtrl ($scope, $modal, $log) {
+  function ModalDemoCtrl ($scope, $modal) {
   	$scope.items = ['item1', 'item2', 'item3'];
 
     $scope.open = function (size) {
 
-      var modalInstance = $modal.open({
+      $modal.open({
         templateUrl: 'myModalContent.html',
         controller: 'ModalInstanceCtrl',
         size: size,

@@ -2,34 +2,7 @@
 
 var gulp = require('gulp');
 
-var util = require('util');
-var browserSync = require('browser-sync');
-
-/**
- * Synchronize browser when the serving files change
- */
-function browserSyncInit(baseDir, files, browser) {
-
-  browser = browser === undefined ? 'default' : browser;
-
-  var routes = null;
-  if (baseDir === 'src' || (util.isArray(baseDir) && baseDir.indexOf('src') !== -1)) {
-    routes = {
-      // Should be '/bower_components': '../bower_components'
-      // Waiting for https://github.com/shakyShane/browser-sync/issues/308
-      '/bower_components': 'bower_components'
-    };
-  }
-
-  browserSync.instance = browserSync.init(files, {
-    startPath: '/',
-    server: {
-      baseDir: baseDir,
-      routes: routes
-    },
-    browser: browser
-  });
-}
+var browserSyncInit = require('../bower_components/fe-env/dist/scripts/server/browser-sync-init');
 
 
 /**
@@ -58,7 +31,7 @@ gulp.task('serve:dist', ['build'], function () {
 });
 
 
-gulp.task('serve:e2e', ['wiredep', 'styles', 'injector:js'], function () {
+gulp.task('serve:e2e', ['styles', 'scripts'], function () {
   browserSyncInit(['src', '.tmp'], null, []);
 });
 

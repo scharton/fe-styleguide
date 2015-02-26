@@ -20,8 +20,10 @@
   "white": true,
   "validthis": true,
   "globals": {
+    // FE
+    "fe": false,
+    // Angular
     "angular": false,
-    // Angular Mocks
     "inject": false,
     // Jasmine
     "describe": false,
