@@ -11,7 +11,7 @@ var multiCapabilities = [{
 if (process.env.SAUCE_USERNAME) {
 
   // Override the application base URL
-  fe.env.appBaseUrl = 'http://fe-styleguide.s3-website-us-west-1.amazonaws.com/';
+  fe.env.appBaseUrl = ' http://styleguide.fngn.com.s3-website-us-west-1.amazonaws.com/';
 
   multiCapabilities = [{
     'browserName': 'chrome',
