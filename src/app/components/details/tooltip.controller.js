@@ -6,8 +6,8 @@ angular.module('styleguide')
 
   function TooltipDemoCtrl($scope) {
   	$scope.dynamicTooltipContent = 'Hello, Tooltip!';
-    $scope.dynamicTooltipLink = 'dynamic';
-    $scope.htmlTooltip = 'I\"ve been made <b>bold</b>!';
+    $scope.dynamicTooltipLink = 'dynamic link text';
+    $scope.htmlTooltip = 'I\'ve been made <b>bold</b>!';
   }
 
   function PopoverDemoCtrl($scope) {

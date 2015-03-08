@@ -1,7 +1,31 @@
 <h2>Tooltip</h2>
 <hr>
+
 <div class="col-md-12" ng-prism-copy="toolTips">
 	<div ng-controller="TooltipDemoCtrl">
+		
+		<div class="roww">
+			<h4>Color variants</h4>
+
+			<div class="row">
+				<div class="col-md-4" style="padding: 30px 10px;">
+					<a href="javascript:void(0)" 
+						  tooltip-placement="top" 
+						  tooltip="On the top">Default tooltip</a>
+				</div>
+				<div class="col-md-4" style="padding: 30px 10px;">
+					<a href="javascript:void(0)" 
+						  tooltip-placement="top" class="green-tooltip"
+						  tooltip="Just add .green-tooltip">Green tooltip</a>
+				</div>
+				<div class="col-md-4" style="padding: 30px 10px;">
+					<a href="javascript:void(0)" 
+						  tooltip-placement="top" class="red-tooltip"
+						  tooltip="Just add .red-tooltip">Red tooltip</a>
+				</div>
+			</div>
+		</div>
+
 		<div class="row">
 			<div class="col-md-6">
 			  <div class="form-group">
