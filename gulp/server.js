@@ -10,16 +10,15 @@ var browserSyncInit = require('../bower_components/fe-env/dist/scripts/server/br
  */
 gulp.task('serve', ['watch'], function () {
 
-  browserSyncInit([
-    'src',
-    '.tmp'
-  ], [
+  browserSyncInit({
+    baseDir: ['src', '.tmp'],
+    files: [
       '.tmp/{app,components}/**/*.css',
       'src/assets/images/**/*',
       'src/*.html',
       'src/{app,components}/**/*.html',
       'src/{app,components}/**/*.js'
-    ]);
+    ]});
 });
 
 
@@ -27,15 +26,25 @@ gulp.task('serve', ['watch'], function () {
  * Server files from the dist dir
  */
 gulp.task('serve:dist', ['build'], function () {
-  browserSyncInit('dist');
+  browserSyncInit({
+    baseDir: 'dist'
+  });
 });
 
 
 gulp.task('serve:e2e', ['styles', 'scripts'], function () {
-  browserSyncInit(['src', '.tmp'], null, []);
+  browserSyncInit({
+    baseDir: ['src', '.tmp'],
+    files: null,
+    browser: []
+  });
 });
 
 
 gulp.task('serve:e2e-dist', ['build'], function () {
-  browserSyncInit('dist', null, []);
+  browserSyncInit({
+    baseDir: 'dist',
+    files: null,
+    browser: []
+  });
 });
