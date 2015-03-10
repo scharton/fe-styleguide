@@ -8,3 +8,4 @@ local.env.js
 *.sublime-workspace
 npm-debug.log
 reports/
+.DS_Store
