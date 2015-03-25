@@ -43,12 +43,13 @@
     "lodash": "~3.3.1",
     "main-bower-files": "~2.4.0",
     "morgan": "~1.5.1",
-    "protractor": "~1.4.0",
+    "protractor": "~1.6.0",
     "protractor-html-screenshot-reporter": "0.0.19",
     "require-dir": "~0.1.0",
     "run-sequence": "~1.0.2",
     "uglify-save-license": "~0.4.1",
-    "wiredep": "~2.2.0"
+    "wiredep": "~2.2.0",
+    "yargs": "~3.6.0"
   },
   "engines": {
     "node": ">=0.10.0"

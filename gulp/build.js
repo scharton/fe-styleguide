@@ -27,7 +27,7 @@ gulp.task('styles', ['injector:sass'], function () {
       this.emit('end');
     })
     // .pipe(plugins.autoprefixer('last 1 version'))
-    .pipe(gulp.dest('.tmp/app/'));
+    .pipe(gulp.dest('.tmp/styles/'));
 });
 
 
@@ -73,7 +73,7 @@ gulp.task('scripts', function(done) {
 /**
  * Inject application-level JS files into index.html
  */
-gulp.task('injector:js', ['jshint', 'injector:localenv'], function () {
+gulp.task('injector:js', ['jshint', 'env', 'injector:localenv'], function () {
 
   var source = gulp.src([
       'src/{app,components}/**/*.js',

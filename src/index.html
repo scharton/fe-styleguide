@@ -35,8 +35,21 @@
     <!-- endbuild -->
 
     <!-- build:css({.tmp,src}) styles/app.css -->
-    <link rel="stylesheet" href="app/index.css">
+    <link rel="stylesheet" href="styles/index.css">
     <!-- endbuild -->
+
+    <!--[if lt IE 9]>
+      <script src="../bower_components/html5shiv/dist/html5shiv.min.js"></script>
+      <script src="../bower_components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- build:js(.tmp) scripts/env.js -->
+    <script src="scripts/env.js"></script>
+    <!-- endbuild -->
+    <!-- devdependency -->
+    <!-- inject:localenv -->
+    <!-- endinject -->
+    <!-- enddevdependency -->
 
     <!-- build:js scripts/modernizr.js -->
     <script src="../bower_components/modernizr/modernizr.js"></script>
@@ -55,18 +68,11 @@
     <div ui-view class="body-view"></div>
 
 
-    <!-- build:js scripts/env.js -->
-    <script src="../bower_components/fe-env/dist/scripts/env.js"></script>
-    <!-- endbuild -->
-
-    <!-- devdependency -->
-    <!-- inject:localenv -->
-    <!-- endinject -->
-    <!-- enddevdependency -->
-
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/respond/dest/respond.src.js"></script>
+    <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
     <script src="../bower_components/angular/angular.js"></script>
     <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="../bower_components/angular-resource/angular-resource.js"></script>
@@ -87,17 +93,17 @@
     <script src="app/components/details/slider.controller.js"></script>
     <script src="app/components/details/progressbar.controller.js"></script>
     <script src="app/components/details/modal.controller.js"></script>
+    <script src="components/prism/prism.directive.js"></script>
+    <script src="components/prism/prism-paste.directive.js"></script>
+    <script src="components/prism/prism-copy.directive.js"></script>
+    <script src="components/prism/prism-bind.directive.js"></script>
+    <script src="components/navbar/navbar.controller.js"></script>
     <script src="app/stages/stages.route.js"></script>
     <script src="app/stages/stages.controller.js"></script>
     <script src="app/home/home.route.js"></script>
     <script src="app/home/home.controller.js"></script>
     <script src="app/components/components.route.js"></script>
     <script src="app/components/components.controller.js"></script>
-    <script src="components/prism/prism.directive.js"></script>
-    <script src="components/prism/prism-paste.directive.js"></script>
-    <script src="components/prism/prism-copy.directive.js"></script>
-    <script src="components/prism/prism-bind.directive.js"></script>
-    <script src="components/navbar/navbar.controller.js"></script>
     <!-- endinject -->
 
     <!-- inject:partials -->
@@ -105,7 +111,7 @@
     <!-- endinject -->
     <!-- endbuild -->
 
-    
+
 
   </body>
 
