@@ -116,6 +116,9 @@ gulp.task('html', ['styles', 'scripts', 'partials'], function () {
 
   return gulp.src('src/*.html')
 
+    // Remove dev code
+    .pipe(plugins.replace(/<!-- devdependency -->[\S\s]*?<!-- enddevdependency -->/g, ''))
+
     // Inject concatenated and registered AngularJS templates to HTMLs
     .pipe(plugins.inject(gulp.src('.tmp/templates/templateCacheHtml.js', {read: false}), {
       starttag: '<!-- inject:partials -->',
