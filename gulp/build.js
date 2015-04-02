@@ -141,8 +141,8 @@ gulp.task('html', ['styles', 'scripts', 'partials'], function () {
     // Optimize and minify CSS files
     .pipe(cssFilter)
     .pipe(plugins.replace('fonts/glyphicons-', 'fonts/bootstrap/glyphicons-'))
-    .pipe(plugins.replace('../fonts/fontawesome-', '../assets/fonts/fontawesome/fontawesome-'))
-    .pipe(plugins.replace(/.\/fonts\/(\w+)\/OpenSans-/g, '../assets/fonts/opensans/$1/OpenSans-'))
+    // .pipe(plugins.replace('../fonts/fontawesome-', '../assets/fonts/fontawesome/fontawesome-'))
+    // .pipe(plugins.replace(/.\/fonts\/(\w+)\/OpenSans-/g, '../assets/fonts/opensans/$1/OpenSans-'))
     .pipe(plugins.csso())
     .pipe(cssFilter.restore())
 
@@ -180,19 +180,19 @@ gulp.task('fonts:bootstrap', function () {
 });
 
 
-gulp.task('fonts:fontawesome', function () {
-  return gulp.src('bower_components/fontawesome/fonts/**/*.{eot,svg,ttf,woff,woff2}')
-    .pipe(gulp.dest('dist/assets/fonts/fontawesome/'));
-});
+// gulp.task('fonts:fontawesome', function () {
+//   return gulp.src('bower_components/fontawesome/fonts/**/*.{eot,svg,ttf,woff,woff2}')
+//     .pipe(gulp.dest('dist/assets/fonts/fontawesome/'));
+// });
 
 
-gulp.task('fonts:opensans', function () {
-  return gulp.src('bower_components/open-sans-fontface/fonts/**/*.{eot,svg,ttf,woff}')
-    .pipe(gulp.dest('dist/assets/fonts/opensans'));
-});
+// gulp.task('fonts:opensans', function () {
+//   return gulp.src('bower_components/open-sans-fontface/fonts/**/*.{eot,svg,ttf,woff}')
+//     .pipe(gulp.dest('dist/assets/fonts/opensans'));
+// });
 
 
-gulp.task('fonts', ['fonts:bootstrap', 'fonts:fontawesome', 'fonts:opensans']);
+gulp.task('fonts', ['fonts:bootstrap' /*, 'fonts:fontawesome', 'fonts:opensans' */]);
 
 
 gulp.task('misc', function () {
