@@ -12,8 +12,8 @@ module.exports = function(config) {
     plugins: [
       'karma-phantomjs-launcher',
       'karma-jasmine',
-      'karma-junit-reporter',
       'karma-coverage',
+      'karma-junit-reporter',
       'karma-htmlfile-reporter'
     ],
 
@@ -24,7 +24,7 @@ module.exports = function(config) {
     },
 
     junitReporter: {
-      outputFile: 'reports/unit/junit.xml'
+      outputFile: 'reports/unit/TESTS-xunit.xml'
     },
 
     coverageReporter: {
@@ -36,6 +36,10 @@ module.exports = function(config) {
         },
         {
           type: 'cobertura',
+          subdir: '.'
+        },
+        {
+          type: 'lcov',
           subdir: '.'
         }
       ]
