@@ -37,6 +37,8 @@
     "browser": false,
     "element": false,
     "by": false,
+    // DTM,
+    "_satellite": false,
     // Prism
     "Prism": false
   }
