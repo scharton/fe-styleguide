@@ -76,7 +76,7 @@ pre[class*="language-"] {
 }
 
 //demopage side-nav
-#components-c .nav-list .nav li{
+.body-container .nav-list .nav li{
 
   margin: 5px 0;
 
@@ -134,5 +134,5 @@ i-progressbar {
 
 
 // injector
-@import 'components/details/anchor-scroll.scss';
+@import 'experiments/anchor-scroll/anchor-scroll.scss';
 // endinjector

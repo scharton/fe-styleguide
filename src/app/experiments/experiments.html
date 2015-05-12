@@ -1,0 +1,19 @@
+<div id="experiments-c" class="container body-container">
+
+  <!-- Experiments list -->
+  <div class="col-md-2 nav-list">
+    <ul class="nav nav-stacked">
+      <li role="presentation" ui-sref-active="active" ng-repeat="experiment in experiments">
+        <a ui-sref="experiments.details({ experimentId: experiment.id })" ng-bind="experiment.name"></a>
+      </li>
+    </ul>
+  </div>
+  <!-- /Experiments list -->
+
+  <!-- Experiments view -->
+  <div class="col-md-10 experiment-view">
+    <div ui-view></div>
+  </div>
+  <!-- /Experiments view -->
+
+</div>

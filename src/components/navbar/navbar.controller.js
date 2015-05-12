@@ -8,5 +8,8 @@ function NavbarCtrl($scope, $rootScope, $state) {
     if (toState.name === 'components') {
       $state.go('components.details', { componentId: 'colors' });
     }
+    else if (toState.name === 'experiments') {
+      $state.go('experiments.details', { experimentId: 'anchor-scroll' });
+    }
   });
 }

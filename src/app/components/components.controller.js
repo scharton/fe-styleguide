@@ -7,8 +7,6 @@ angular.module('styleguide')
 function ComponentsCtrl($scope, $window, $log) {
 
   $scope.components = [{
-      id: 'anchor-scroll', name: 'Anchor scroll'
-    },{
       id: 'alert', name: 'Alerts'
     }, {
       id: 'buttons', name: 'Buttons'
