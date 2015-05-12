@@ -8,6 +8,8 @@ function ExperimentsCtrl($scope) {
 
   $scope.experiments = [{
       id: 'anchor-scroll', name: 'Anchor scroll'
+    }, {
+      id: 'growth-gauge', name: 'Growth gauge'
     }
   ];
 

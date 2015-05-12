@@ -1,0 +1,46 @@
+<h2>Growth gauge</h2>
+<hr>
+
+<h6>There's a trade off between your Loss Limit and amount of risk (and growth potential) your investments will have.  Use the slider below to find your sweet spot.</h6>
+
+<div id="growth-gauge-c" class="row" ng-controller="GrowthGaugeCtrl">
+
+  <div class="col-md-6 col-sm-12 col-xs-12">
+    <div id="loss-limit-slider" class="pull-left">
+      <div class="slider-max slider-end">
+        Your balance: {{ slider.options.max | numeraljs: '$0,0aK' | uppercase }}<span class="tick-line"></span>
+      </div>
+      <div slider
+        ng-model="slider.value"
+        value="slider.value"
+        min="slider.options.min"
+        max="slider.options.max"
+        step="slider.options.step"
+        precision="slider.options.precision"
+        reversed="true"
+        orientation="vertical"
+        tooltip="hide"
+        tooltip-enable="false"
+        ng-disabled="false">
+      </div>
+      <div class="slider-min slider-end">
+        {{ slider.options.min | numeraljs: '$0' }}<span class="tick-line"></span>
+      </div>
+    </div> <!-- /#loss-limit-slider -->
+
+    <div id="loss-limit-amount" class="input-group input-group-lg pull-left">
+      <span class="input-group-addon">$</span>
+      <input type="number" name="loss-limit-amount" class="form-control" ng-model="slider.value"
+        min="{{ slider.options.min }}" max="{{ slider.options.max }}" step="{{ slider.options.step }}"
+        aria-label="Amount">
+    </div>
+  </div>
+
+  <div class="col-md-6 col-sm-12 col-xs-12">
+    <div id="growth-rank-name">{{ growthRank.name }}</div>
+    <div fe-chart options="gauge" id="growth-gauge" ng-if="svgSupport"></div>
+    <div id="growth-rank-short-desc">{{ growthRank.shortDesc }}</div>
+    <div id="growth-rank-long-desc">{{ growthRank.longDesc }}</div>
+  </div>
+
+</div> <!-- /.main-row -->

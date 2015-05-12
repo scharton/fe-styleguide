@@ -1,0 +1,144 @@
+#growth-gauge-c {
+
+  position: relative;
+  margin-top: 30px;
+  overflow: hidden;
+
+  #loss-limit-slider {
+    position: relative;
+    height: 200px;
+    width: 220px;
+
+    [slider] {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      padding: 8px 0;
+
+      .slider {
+        height: 100%;
+      }
+
+      .slider-track {
+        background: #008000;
+        filter: none;
+      }
+
+      .slider-selection {
+        background: #bbb;
+        filter: none;
+      }
+
+      .slider-handle {
+        opacity: 1;
+      }
+
+    } // /[slider]
+
+
+    .slider-end {
+      position: absolute;
+      text-align: right;
+      right: 20px;
+      font-weight: 600;
+
+      &.slider-min {
+        bottom: 0;
+      }
+
+      &.slider-max {
+        top: 0;
+      }
+
+      .tick-line {
+        display: inline-block;
+        position: relative;
+        top: -0.3em;
+        border-top: solid 1px #aaa;
+        width: 20px;
+        margin-left: 5px;
+      }
+    }
+
+  } // /#loss-limit-slider
+
+
+  #loss-limit-amount {
+    margin-top: 10px;
+    width: 150px;
+    margin-left: 20px;
+
+    input[type=number] {
+      width: 110px;
+      -moz-appearance: textfield; // Hide number field spinner
+    }
+
+    // Hide number field spinner
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+
+  #growth-rank-name,
+  #growth-rank-short-desc,
+  #growth-rank-long-desc {
+    text-align: center;
+  }
+  #growth-rank-name {
+    margin-bottom: 5px;
+  }
+  #growth-rank-short-desc {
+    margin: 5px 0 0;
+    font-weight: 600;
+  }
+  #growth-rank-long-desc {
+    margin: 0 1em;
+  }
+
+
+/*  .animate-switch {
+
+    &.ng-animate {
+      transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &#test2.ng-enter {
+        left: 100%;
+    }
+    &#test2.ng-enter.ng-enter-active {
+        left: 0;
+    }
+    &#test1.ng-leave {
+        left: 0;
+    }
+    &#test1.ng-leave.ng-leave-active{
+        left: -100%;
+    }
+
+    &#test1.ng-enter {
+        left: -100%;
+    }
+    &#test1.ng-enter.ng-enter-active {
+        left: 0;
+    }
+    &#test2.ng-leave {
+        left: 0;
+    }
+    &#test2.ng-leave.ng-leave-active{
+        left: 100%;
+    }
+
+  } // /.animate-switch*/
+
+
+} // /#growth-gauge
