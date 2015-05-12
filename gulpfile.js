@@ -7,6 +7,18 @@ require('fe-gulp')(function(opts) {
     module: 'styleguide'
   };
 
+  opts.wiredep.exclude = [
+    'modernizr',
+    'respond',
+    'html5shiv',
+    'es5-shim',
+    'js/bootstrap.js',
+    'd3',
+    'c3',
+    'fe-app-dynamics',
+    /angulartics-(?!gtm)/
+  ];
+
   options = opts;
 
   return opts;

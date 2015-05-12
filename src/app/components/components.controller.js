@@ -7,6 +7,8 @@ angular.module('styleguide')
 function ComponentsCtrl($scope, $window, $log) {
 
   $scope.components = [{
+      id: 'anchor-scroll', name: 'Anchor scroll'
+    },{
       id: 'alert', name: 'Alerts'
     }, {
       id: 'buttons', name: 'Buttons'
@@ -28,8 +30,6 @@ function ComponentsCtrl($scope, $window, $log) {
       id: 'popover', name: 'Popover'
     }, {
       id: 'progressbar', name: 'Progressbar'
-    }, {
-      id: 'sliders', name: 'Sliders'
     }, {
       id: 'table', name: 'Tables'
     }, {

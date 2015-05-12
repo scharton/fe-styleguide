@@ -5,30 +5,25 @@
     .module('styleguide', [
       'ngSanitize',
       'ngResource',
+      'ngAnimate',
+      'ngNumeraljs',
       'ui.router',
       'ui.bootstrap',
-      'feSliders'])
+      'ui.bootstrap-slider',
+      'duScroll',
+      'feAngularCore'])
     .config(config)
     .controller('MainCtrl', MainCtrl);
 
 
-  function config($urlRouterProvider) {
+  function config($urlRouterProvider, feAuthServiceProvider) {
     $urlRouterProvider.otherwise('/');
+
+    feAuthServiceProvider.autoLogin(false);
   }
 
 
-  function MainCtrl($rootScope, $log) {
-
-    if (_satellite) {
-
-      $rootScope.$on('$stateChangeSuccess',
-        function(event, toState/*, toParams, fromState, fromParams*/) {
-          $log.log('toState = ', toState.name);
-
-          _satellite.setVar('stateName', toState.name);
-          _satellite.track('spaStateChange');
-        });
-    }
+  function MainCtrl() {
   }
 
 })();

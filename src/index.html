@@ -11,42 +11,48 @@
     <meta name="description" content="FE Style Guide">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- ======== Vendor CSS ======== -->
     <!-- build:css styles/vendor.css -->
-    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/core.css" />
-    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/accordion.css" />
-    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/autocomplete.css" />
-    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/button.css" />
-    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/datepicker.css" />
-    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/dialog.css" />
-    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/draggable.css" />
-    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/menu.css" />
-    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/progressbar.css" />
-    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/resizable.css" />
-    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/selectable.css" />
-    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/selectmenu.css" />
-    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/sortable.css" />
-    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/slider.css" />
-    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/spinner.css" />
-    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/tabs.css" />
-    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/tooltip.css" />
-    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/theme.css" />
     <link rel="stylesheet" href="../bower_components/fe-bootstrap/dist/styles/fe-bootstrap.css" />
-    <link rel="stylesheet" href="../bower_components/fe-slider/dist/styles/slider.css" />
+    <link rel="stylesheet" href="../bower_components/fe-angular-core/dist/styles/fe-angular-core.css" />
+    <link rel="stylesheet" href="../bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
+    <link rel="stylesheet" href="../bower_components/c3/c3.css" />
     <link rel="stylesheet" href="../bower_components/prism/themes/prism.css" />
     <!-- endbuild -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700" />
+    <!-- ======== /Vendor CSS ======== -->
 
+
+    <!-- ======== Chart ======== -->
+    <!--[if gt IE 8]><!-->
+    <!-- build:js scripts/chart.js -->
+    <script src="../bower_components/d3/d3.js"></script>
+    <script src="../bower_components/c3/c3.js"></script>
+    <!-- endbuild -->
+    <!--<![endif]-->
+    <!-- ======== /Chart ======== -->
+
+
+    <!-- ======== Application CSS ======== -->
     <!-- build:css({.tmp,src}) styles/app.css -->
     <link rel="stylesheet" href="styles/index.css">
     <!-- endbuild -->
+    <!-- ======== /Application CSS ======== -->
 
+
+    <!-- ======== IE8 shiv ======== -->
+    <!-- build:js scripts/ie8-shiv.js -->
     <!--[if lt IE 9]>
-      <script src="../bower_components/html5shiv/dist/html5shiv.min.js"></script>
-      <script src="../bower_components/respond/dest/respond.min.js"></script>
-      <script src="../bower_components/es5-shim/es5-shim.min.js"></script>
+    <script src="../bower_components/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="../bower_components/respond/dest/respond.min.js"></script>
+    <script src="../bower_components/es5-shim/es5-shim.min.js"></script>
     <![endif]-->
+    <!-- endbuild -->
+    <!-- ======== /IE8 shiv ======== -->
 
+
+    <!-- ======== Environment ======== -->
     <!-- build:js(.tmp) scripts/env.js -->
     <script src="scripts/env.js"></script>
     <!-- endbuild -->
@@ -55,17 +61,18 @@
     <script src="overrides/local.env.js"></script>
     <!-- endinject -->
     <!-- enddevdependency -->
+    <!-- ======== /Environment ======== -->
 
+
+    <!-- ======== Modernizr ======== -->
     <!-- build:js scripts/modernizr.js -->
     <script src="../bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
-
-    <!-- ======== Dynamic Tag Manager Head ======== -->
-    <script src="//assets.adobedtm.com/a0e3941d5a9d6f0c3911ec5acd84602babe03b22/satelliteLib-f5c5c34650a8490ac30a69d9a07c5f48ff96098e.js"></script>
-    <!-- ======== /Dynamic Tag Manager Head ======== -->
+    <!-- ======== /Modernizr ======== -->
   </head>
 
   <body ng-controller="MainCtrl">
+
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -77,6 +84,7 @@
     <div ui-view class="body-view"></div>
 
 
+    <!-- ======== Vendor JS ======== -->
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
@@ -91,41 +99,43 @@
     <script src="../bower_components/ng-idle/angular-idle.js"></script>
     <script src="../bower_components/fe-bootstrap/dist/scripts/fe-bootstrap.js"></script>
     <script src="../bower_components/fe-angular-core/dist/scripts/fe-angular-core.js"></script>
-    <script src="../bower_components/jquery-ui/jquery-ui.js"></script>
-    <script src="../bower_components/angular-ui-slider/src/slider.js"></script>
-    <script src="../bower_components/fe-slider/dist/scripts/slider.js"></script>
+    <script src="../bower_components/numeral/numeral.js"></script>
+    <script src="../bower_components/angular-numeraljs/dist/angular-numeraljs.js"></script>
+    <script src="../bower_components/angular-scroll/angular-scroll.js"></script>
+    <script src="../bower_components/seiyria-bootstrap-slider/js/bootstrap-slider.js"></script>
+    <script src="../bower_components/angular-bootstrap-slider/slider.js"></script>
     <script src="../bower_components/prism/prism.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+    <!-- ======== /Vendor JS ======== -->
 
+
+    <!-- ======== Application JS ======== -->
     <!-- build:js({.tmp,src}) scripts/app.js -->
     <!-- inject:js -->
     <script src="app/index.js"></script>
     <script src="app/components/details/tooltip.controller.js"></script>
-    <script src="app/components/details/slider.controller.js"></script>
     <script src="app/components/details/progressbar.controller.js"></script>
     <script src="app/components/details/modal.controller.js"></script>
+    <script src="app/components/details/anchor-scroll.value.js"></script>
+    <script src="app/components/details/anchor-scroll.controller.js"></script>
+    <script src="components/prism/prism.directive.js"></script>
+    <script src="components/prism/prism-paste.directive.js"></script>
+    <script src="components/prism/prism-copy.directive.js"></script>
+    <script src="components/prism/prism-bind.directive.js"></script>
+    <script src="components/navbar/navbar.controller.js"></script>
     <script src="app/stages/stages.route.js"></script>
     <script src="app/stages/stages.controller.js"></script>
     <script src="app/home/home.route.js"></script>
     <script src="app/home/home.controller.js"></script>
     <script src="app/components/components.route.js"></script>
     <script src="app/components/components.controller.js"></script>
-    <script src="components/prism/prism.directive.js"></script>
-    <script src="components/prism/prism-paste.directive.js"></script>
-    <script src="components/prism/prism-copy.directive.js"></script>
-    <script src="components/prism/prism-bind.directive.js"></script>
-    <script src="components/navbar/navbar.controller.js"></script>
     <!-- endinject -->
     <!-- inject:partials -->
     <!-- angular templates will be automaticaly converted in js and inserted here -->
     <!-- endinject -->
     <!-- endbuild -->
-
-    <!-- ======== Dynamic Tag Manager Bottom ======== -->
-    <script>_satellite.pageBottom();</script>
-    <!-- ======== /Dynamic Tag Manager Bottom ======== -->
+    <!-- ======== /Application JS ======== -->
 
   </body>
-
 </html>

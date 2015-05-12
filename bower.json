@@ -7,7 +7,10 @@
     "html5shiv": "~3.7.2",
     "es5-shim": "~4.1.1",
     "fe-angular-core": "latest",
-    "fe-slider": "latest",
+    "angular-numeraljs": "~1.1.6",
+    "angular-scroll": "~0.7.0",
+    "angular-bootstrap-slider": "~0.1.1",
+    "c3": "~0.4.10",
     "prism": "https://github.com/LeaVerou/prism.git#gh-pages"
   },
   "devDependencies": {
@@ -18,7 +21,6 @@
     "url": "http://git-prd-01/spa-development/fe-styleguide.git"
   },
   "resolutions": {
-    "angular": "~1.2.28",
-    "jquery-ui": "~1.11.2"
+    "angular": "~1.2.28"
   }
 }

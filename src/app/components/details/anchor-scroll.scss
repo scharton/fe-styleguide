@@ -1,0 +1,142 @@
+.nav-dots {
+  position: fixed;
+  list-style: none;
+  z-index: 10;
+  right: 100px;
+  top: 50%;
+  margin-top: -100px;
+
+  @media #{$xs-screen} {
+    display: none;
+  }
+  @media #{$s-screen} {
+    display: none;
+  }
+
+  li {
+
+    position: relative;
+    height: 65px;
+
+    &::after {
+      content: "";
+      display: block;
+      border: 2px solid #fff;
+      height: 45px;
+      width: 0;
+      box-shadow: 2px 2px 5px #888888;
+      position: absolute;
+      right: 3px;
+      top: 38px;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+
+    a {
+      cursor: pointer;
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      text-align: right;
+      text-shadow: 1px 1px 6px #020202;
+      font-weight: 600;
+
+      .circle {
+        border-radius: 50%;
+        behavior: url(PIE.htc);
+        width: 30px;
+        height: 30px;
+        background: #777777;
+        border: 3px solid #fff;
+        box-shadow: 2px 2px 5px #888888;
+        display: inline-block;
+        position: relative;
+        top: 10px;
+        left: 10px;
+      }
+
+      &.active > .circle {
+        background: #ffad56;
+      }
+
+      &:hover {
+
+        .circle {
+          box-shadow: 0 0 10px #e26f1b;
+          background: #ffc354;
+        }
+      }
+    } // /a
+
+  } // /li
+
+
+}  // /.nav-dots
+
+
+//
+// Demo styles
+//
+
+$gradient-light: #1FA0C8;
+$gradient-dark: #0C84AA;
+$text-color: #ffffff;
+
+
+.btn-test {
+  margin: 20px 0;
+}
+
+span .tooltip-inner {
+  width: 300px;
+}
+
+.blue-background {
+  background: #0C84AA;
+  background-image: -ms-radial-gradient(center, circle closest-side, $gradient-light 0%, #0C84AA 100%);
+  background-image: -moz-radial-gradient(center, circle closest-side, $gradient-light 0%, #0C84AA 100%);
+  background-image: -o-radial-gradient(center, circle closest-side, $gradient-light 0%, #0C84AA 100%);
+  background-image: -webkit-gradient(radial, center center, 0, center center, 140, color-stop(0, $gradient-light), color-stop(1, #0C84AA));
+  background-image: -webkit-radial-gradient(center, circle closest-side, $gradient-light 0%, #0C84AA 100%);
+  background-image: radial-gradient(circle closest-side at center, $gradient-light 0%, #0C84AA 100%);
+}
+
+.mycontainer-center {
+  text-align: center;
+  color: $text-color;
+}
+
+.permission {
+  font-size: 12px;
+  margin: 20px 0;
+}
+
+.white-background {
+  color: #1E1E1E;
+  background-color: #FFFFFF;
+}
+
+.gray-background {
+  color: #747064;
+  background-color: #E8E7E2;
+}
+
+.dark-background {
+  color: #fff;
+  background-color: #666666;
+}
+
+.lorem {
+  margin: 20px 180px 40px;
+
+  @media #{$s-screen} {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  @media #{$xs-screen} {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

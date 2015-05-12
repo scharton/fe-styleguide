@@ -1,3 +1,9 @@
+$md-screen: "(min-width: 992px)";
+$xs-screen: "(max-width: 767px)";
+$s-screen: "(min-width: 768px) and (max-width: 991px)";
+$md-s-screen: "(min-width: 992px) and (max-width: 1199px)";
+
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -31,7 +37,7 @@
 }
 
 .body-view {
-  padding: 85px 0;
+  padding:  20px 0 85px;
   min-height: 600px;
 }
 
@@ -71,7 +77,7 @@ pre[class*="language-"] {
 
 //demopage side-nav
 #components-c .nav-list .nav li{
-  
+
   margin: 5px 0;
 
   &.active{
@@ -80,7 +86,7 @@ pre[class*="language-"] {
       font-weight: 600;
     }
   }
-  
+
   & > a {
     padding: 4px 15px;
     background-color: transparent;
@@ -126,5 +132,7 @@ i-progressbar {
   }
 }
 
+
 // injector
+@import 'components/details/anchor-scroll.scss';
 // endinjector

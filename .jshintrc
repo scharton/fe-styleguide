@@ -10,7 +10,7 @@
   //"latedef": true,
   "newcap": true,
   "noarg": true,
-  "quotmark": "single",
+  //"quotmark": "single",
   "regexp": true,
   "undef": true,
   "unused": true,
@@ -20,26 +20,42 @@
   "white": true,
   "validthis": true,
   "globals": {
+    // Browser
+    "window": false,
+    "document": false,
     // FE
     "fe": false,
+    // Data analysis
+    "dataLayer": false,
+    // Modernizr,
+    "Modernizr": false,
+    // JQuery
+    "$": false,
+    // C3/D3
+    "c3": false,
+    "d3": false,
+    // Prism
+    "Prism": false,
     // Angular
     "angular": false,
     "inject": false,
     // Jasmine
     "describe": false,
+    "xdescribe": false,
     "it": false,
+    "xit": false,
     "before": false,
     "beforeEach": false,
+    "beforeAll": false,
     "after": false,
     "afterEach": false,
+    "afterAll": false,
     "expect": false,
+    "spyOn": false,
     // Protractor
+    "protractor": false,
     "browser": false,
     "element": false,
-    "by": false,
-    // DTM,
-    "_satellite": false,
-    // Prism
-    "Prism": false
+    "by": false
   }
 }
