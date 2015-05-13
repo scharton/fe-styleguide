@@ -1,4 +1,4 @@
-.view-slider {
+.view-carousel {
 
   position: relative;
   overflow: hidden;
@@ -13,45 +13,7 @@
     width: 100%;
   }
 
-} // /.view-slider
-
-
-.sliding-door-slider {
-
-  & > [ng-switch-when] {
-
-    &#door2.ng-enter {
-      left: 100%;
-    }
-    &#door2.ng-enter.ng-enter-active {
-      left: 0;
-    }
-    &#door1.ng-leave {
-      left: 0;
-    }
-    &#door1.ng-leave.ng-leave-active{
-      left: -100%;
-    }
-
-    &#door1.ng-enter {
-      left: -100%;
-    }
-    &#door1.ng-enter.ng-enter-active {
-      left: 0;
-    }
-    &#door2.ng-leave {
-      left: 0;
-    }
-    &#door2.ng-leave.ng-leave-active{
-      left: 100%;
-    }
-  }
-} // /.slidering-door-slider
-
-
-.fly-in-slider {
-
-  & > [ng-switch-when] {
+  &.to-next-view > [ng-switch-when] {
 
     &.ng-enter {
       left: 100%;
@@ -59,7 +21,6 @@
     &.ng-enter.ng-enter-active {
       left: 0;
     }
-
     &.ng-leave {
       left: 0;
     }
@@ -67,19 +28,47 @@
       left: -100%;
     }
   }
-} // /.fly-in-slider
+
+  &.to-prev-view > [ng-switch-when] {
+
+    &.ng-enter {
+      left: -100%;
+    }
+    &.ng-enter.ng-enter-active {
+      left: 0;
+    }
+    &.ng-leave {
+      left: 0;
+    }
+    &.ng-leave.ng-leave-active{
+      left: 100%;
+    }
+  }
+
+  .view-carousel-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+  }
+} // /.view-carousel
+
 
 
 //
 // Demo styles
 //
 
-#view-slider-1,
-#view-slider-2 {
-  width: 400px;
-  height: 360px;
+#view-carousel-1 {
+  width: 450px;
+  height: 400px;
 
   & > [ng-switch-when] {
     padding: 10px;
   }
+}
+
+.view-carousel {
+  border: 1px solid #999;
 }

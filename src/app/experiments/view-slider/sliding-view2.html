@@ -1,0 +1,11 @@
+<h6>View 2</h6>
+
+<div ng-controller="SlidingView2Ctrl">
+
+  <div fe-chart options="chart" ng-if="svgSupport"></div>
+
+  <div class="view-carousel-nav">
+    <a href="javascript:void(0);" ng-click="prevView()" ng-if="firstView === false"class="pull-left">Previous</a>
+    <a href="javascript:void(0);" ng-click="nextView()" ng-if="lastView === false" class="pull-right">Next</a>
+  </div>
+</div>

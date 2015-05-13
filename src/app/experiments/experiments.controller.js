@@ -9,6 +9,8 @@ function ExperimentsCtrl($scope) {
   $scope.experiments = [{
       id: 'anchor-scroll', name: 'Anchor scroll'
     }, {
+      id: 'carousel', name: 'Carousel'
+    }, {
       id: 'growth-gauge', name: 'Growth gauge'
     }, {
       id: 'view-flipper', name: 'View flipper'

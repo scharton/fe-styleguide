@@ -1,52 +1,25 @@
 <h2>View slider</h2>
 <hr>
 
-<div id="view-slider-c" ng-controller="ViewSliderCtrl" class="row">
+<div ng-controller="ViewSliderCtrl" class="row">
 
-    <div class="col-md-6 col-sm-12 col-xs-12">
-      <h3>Sliding door slider</h3>
-      <div ng-switch on="selectedDoor" id="view-slider-1" class="view-slider sliding-door-slider">
+    <div class="col-md-8 col-sm-12 col-xs-12">
+      <h3>View carousel</h3>
+      <div ng-switch on="selectedView" id="view-carousel-1" class="view-carousel" ng-class="direction">
 
-        <div ng-switch-when="door1" id="door1">
-          <h6>Door 1</h6>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dolore neque voluptatibus illo sequi animi earum rerum, corporis laudantium iste. Rem cum itaque corporis repellat debitis eos aliquid vel sint cumque quibusdam, minus eaque, consectetur optio laboriosam numquam illum aliquam rerum neque voluptatum eveniet dicta id nostrum dolorum amet. Autem sequi expedita voluptate tempora itaque dolor debitis temporibus dolore modi nostrum maxime cumque incidunt delectus aut recusandae nesciunt, asperiores quia fuga quaerat perspiciatis suscipit! Explicabo, velit. Cupiditate, soluta. Rerum eos consequatur accusamus, ex praesentium voluptates, consequuntur illo, totam ducimus voluptate, vitae illum nisi. Omnis, ipsam deserunt laborum repellat doloribus, ea?
-          </p>
-          <p class="text-right"><a href="javascript:void(0);" ng-click="nextDoor()">Next</a></p>
-        </div> <!-- /#door1 -->
-
-        <div ng-switch-when="door2" id="door2">
-          <h6>Door 2</h6>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dolore neque voluptatibus illo sequi animi earum rerum, corporis laudantium iste. Rem cum itaque corporis repellat debitis eos aliquid vel sint cumque quibusdam, minus eaque, consectetur optio laboriosam numquam illum aliquam rerum neque voluptatum eveniet dicta id nostrum dolorum amet. Autem sequi expedita voluptate tempora itaque dolor debitis temporibus dolore modi nostrum maxime cumque incidunt delectus aut recusandae nesciunt, asperiores quia fuga quaerat perspiciatis suscipit! Explicabo, velit. Cupiditate, soluta. Rerum eos consequatur accusamus, ex praesentium voluptates, consequuntur illo, totam ducimus voluptate, vitae illum nisi. Omnis, ipsam deserunt laborum repellat doloribus, ea?
-          </p>
-          <p><a href="javascript:void(0);" ng-click="prevDoor()">Previous</a></p>
-        </div> <!-- /#door2 -->
-
-      </div> <!-- /#view-slider-1 -->
-    </div>
-
-
-    <div class="col-md-6 col-sm-12 col-xs-12">
-      <h3>Fly in slider</h3>
-      <div ng-switch on="selectedView" id="view-slider-2" class="view-slider fly-in-slider">
-
-        <div ng-switch-when="view1" id="view1">
-          <h6>View 1</h6>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dolore neque voluptatibus illo sequi animi earum rerum, corporis laudantium iste. Rem cum itaque corporis repellat debitis eos aliquid vel sint cumque quibusdam, minus eaque, consectetur optio laboriosam numquam illum aliquam rerum neque voluptatum eveniet dicta id nostrum dolorum amet. Autem sequi expedita voluptate tempora itaque dolor debitis temporibus dolore modi nostrum maxime cumque incidunt delectus aut recusandae nesciunt, asperiores quia fuga quaerat perspiciatis suscipit! Explicabo, velit. Cupiditate, soluta. Rerum eos consequatur accusamus, ex praesentium voluptates, consequuntur illo, totam ducimus voluptate, vitae illum nisi. Omnis, ipsam deserunt laborum repellat doloribus, ea?
-          </p>
+        <div ng-switch-when="view1">
+          <div ng-include="'app/experiments/view-slider/sliding-view1.html'"></div>
         </div> <!-- /#view1 -->
 
-        <div ng-switch-when="view2" id="view2">
-          <h6>View 2</h6>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dolore neque voluptatibus illo sequi animi earum rerum, corporis laudantium iste. Rem cum itaque corporis repellat debitis eos aliquid vel sint cumque quibusdam, minus eaque, consectetur optio laboriosam numquam illum aliquam rerum neque voluptatum eveniet dicta id nostrum dolorum amet. Autem sequi expedita voluptate tempora itaque dolor debitis temporibus dolore modi nostrum maxime cumque incidunt delectus aut recusandae nesciunt, asperiores quia fuga quaerat perspiciatis suscipit! Explicabo, velit. Cupiditate, soluta. Rerum eos consequatur accusamus, ex praesentium voluptates, consequuntur illo, totam ducimus voluptate, vitae illum nisi. Omnis, ipsam deserunt laborum repellat doloribus, ea?
-          </p>
+        <div ng-switch-when="view2">
+          <div ng-include="'app/experiments/view-slider/sliding-view2.html'"></div>
         </div> <!-- /#view2 -->
 
-      </div> <!-- /#view-slider-2 -->
-      <p class="text-center"><a href="javascript:void(0);" ng-click="flyIn()">Next</a></p>
+        <div ng-switch-when="view3">
+          <div ng-include="'app/experiments/view-slider/sliding-view3.html'"></div>
+        </div> <!-- /#view3 -->
+
+      </div>
     </div>
 
 </div>

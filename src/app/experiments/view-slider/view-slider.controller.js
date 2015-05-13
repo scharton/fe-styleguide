@@ -6,37 +6,51 @@
     .controller('ViewSliderCtrl', ViewSliderCtrl);
 
 
-  function ViewSliderCtrl($scope, $log) {
+  function ViewSliderCtrl($scope) {
 
     //
     // Page turner
     //
 
-    var doors = [ 'door1', 'door2' ];
-    $scope.selectedDoor = doors[0];
+    var views = [ 'view1', 'view2', 'view3' ];
+    var index = 0;
+    $scope.selectedView = views[index];
 
-    $scope.nextDoor = function() {
-      $scope.selectedDoor = doors[1];
+    var firstOrLast = function() {
+      $scope.firstView = (index === 0);
+      $scope.lastView = (index === views.length - 1);
+    }
+
+    $scope.nextView = function() {
+      $scope.direction = 'to-next-view';
+      index = (index + 1) % views.length;
+      $scope.selectedView = views[index];
+      firstOrLast();
     };
 
-    $scope.prevDoor = function() {
-      $scope.selectedDoor = doors[0];
+    $scope.prevView = function() {
+      $scope.direction = 'to-prev-view';
+      index = (index + views.length - 1) % views.length;
+      $scope.selectedView = views[index];
+      firstOrLast();
     };
 
+    firstOrLast();
 
-    //
-    // Fly in slider
-    //
 
-    var views = [ 'view1', 'view2' ];
-    var selectedViewIndex = 0;
-    $scope.selectedView = views[selectedViewIndex];
+    // //
+    // // Fly in slider
+    // //
 
-    $scope.flyIn = function() {
-      selectedViewIndex = (selectedViewIndex + 1) % views.length;
-      $log.log(selectedViewIndex);
-      $scope.selectedView = views[selectedViewIndex];
-    };
+    // var views = [ 'view1', 'view2' ];
+    // var selectedViewIndex = 0;
+    // $scope.selectedView = views[selectedViewIndex];
+
+    // $scope.flyIn = function() {
+    //   selectedViewIndex = (selectedViewIndex + 1) % views.length;
+    //   $log.log(selectedViewIndex);
+    //   $scope.selectedView = views[selectedViewIndex];
+    // };
   }
 
 })();
