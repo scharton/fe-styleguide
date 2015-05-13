@@ -10,6 +10,10 @@ function ExperimentsCtrl($scope) {
       id: 'anchor-scroll', name: 'Anchor scroll'
     }, {
       id: 'growth-gauge', name: 'Growth gauge'
+    }, {
+      id: 'view-flipper', name: 'View flipper'
+    }, {
+      id: 'view-slider', name: 'View slider'
     }
   ];
 
