@@ -19,7 +19,7 @@
     var firstOrLast = function() {
       $scope.firstView = (index === 0);
       $scope.lastView = (index === views.length - 1);
-    }
+    };
 
     $scope.nextView = function() {
       $scope.direction = 'to-next-view';
