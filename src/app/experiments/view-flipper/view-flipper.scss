@@ -42,6 +42,25 @@
   transform: rotateY(180deg);
 }
 
+/* Fix for IE8/9 */
+.no-csstransforms3d {
+  .view-front {
+    display: block;
+  }
+  .view-back {
+    display: none;
+  }
+
+  .flipped {
+    .view-front {
+      display: none;
+    }
+    .view-back {
+      display: block;
+    }
+  }
+}
+
 
 //
 // Demo
