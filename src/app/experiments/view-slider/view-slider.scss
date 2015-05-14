@@ -60,15 +60,12 @@
 // Demo styles
 //
 
-#view-carousel-1 {
+.view-carousel {
   width: 450px;
   height: 400px;
+  border: 1px solid #999;
 
   & > [ng-switch-when] {
     padding: 10px;
   }
-}
-
-.view-carousel {
-  border: 1px solid #999;
 }

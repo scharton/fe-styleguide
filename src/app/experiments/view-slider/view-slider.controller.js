@@ -8,10 +8,6 @@
 
   function ViewSliderCtrl($scope) {
 
-    //
-    // Page turner
-    //
-
     var views = [ 'view1', 'view2', 'view3' ];
     var index = 0;
     $scope.selectedView = views[index];
@@ -36,21 +32,6 @@
     };
 
     firstOrLast();
-
-
-    // //
-    // // Fly in slider
-    // //
-
-    // var views = [ 'view1', 'view2' ];
-    // var selectedViewIndex = 0;
-    // $scope.selectedView = views[selectedViewIndex];
-
-    // $scope.flyIn = function() {
-    //   selectedViewIndex = (selectedViewIndex + 1) % views.length;
-    //   $log.log(selectedViewIndex);
-    //   $scope.selectedView = views[selectedViewIndex];
-    // };
   }
 
 })();
