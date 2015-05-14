@@ -1,0 +1,54 @@
+/**
+ * Reference: http://davidwalsh.name/css-flip
+ */
+
+/* entire container, keeps perspective */
+.view-flipper {
+  perspective: 1000px;
+  position: relative;
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* flip the pane */
+.view-flipper.flipped .flipper {
+  transform: rotateY(180deg);
+}
+
+.view-front,
+.view-back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* hide back of pane during swap */
+  backface-visibility: hidden;
+}
+
+/* front pane, placed above back */
+.view-front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.view-back {
+  transform: rotateY(180deg);
+}
+
+
+//
+// Demo
+//
+
+.view-flipper {
+  width: 350px;
+  height: 400px;
+}
+
