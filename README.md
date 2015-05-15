@@ -1,13 +1,38 @@
-# Project setup instructions for developers
+# Project setup instructions
 
 https://compass.fngn.com/departments/Technology/SD/SitePages/angular-gulp%20project%20setup.aspx
 
 
 # How do I create patterns?
 
-1. Create a directory (e.g. my-pattern) in src/app/patterns
-2. Inside my-pattern directory, create a HTML file which must have the exactly same name as its parent directory's (in this case, my-pattern.html)
-3. Register this new pattern in src/app/patterns/patterns.value.js
+Create a directory (e.g. my-pattern) in src/app/patterns
+
+Inside my-pattern directory, create a HTML file which must have the exactly same name as its parent directory's (in this case, my-pattern.html)
+
+Register this new pattern in src/app/patterns/patterns.value.js. See below:
+
+```JavaScript
+(function() {
+  'use strict';
+
+  angular
+    .module('styleguide')
+
+    // Register pattern IDs and names here
+    .value('patterns', [
+      {
+        id: 'pattern1', name: 'Pattern 1'
+      },
+      {
+        id: 'pattern2', name: 'Pattern 2'
+      }, 
+      {
+        id: 'my-pattern', name: 'My pattern'
+      }
+    ]);
+
+})();
+```
 
 
 # How do I add CSS style sheets to my pattern?
