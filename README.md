@@ -1,9 +1,9 @@
-# Project setup instructions
+## Project setup instructions
 
 https://compass.fngn.com/departments/Technology/SD/SitePages/angular-gulp%20project%20setup.aspx
 
 
-# How do I create patterns?
+## How do I create patterns?
 
 Create a directory (e.g. my-pattern) in src/app/patterns
 
@@ -27,7 +27,7 @@ Register this new pattern in src/app/patterns/patterns.value.js. See below:
         id: 'pattern2', name: 'Pattern 2'
       }, 
       {
-        id: 'my-pattern', name: 'My pattern'
+        id: 'my-pattern', name: 'My pattern' // Here is your new pattern
       }
     ]);
 
@@ -35,7 +35,7 @@ Register this new pattern in src/app/patterns/patterns.value.js. See below:
 ```
 
 
-# How do I add CSS style sheets to my pattern?
+## How do I style my pattern?
 
 Create a SASS file (e.g. my-pattern.scss) in src/app/patterns/my-pattern/ directory. 
 The file name can be anything, but it's recommended to use the same name as its parent directory's.
@@ -63,7 +63,7 @@ Of course, you need to add this ID to your HTML (my-pattern.html):
 ```
 
 
-# How do I add Angular code?
+## How do I add Angular code?
 
 Create my-pattern.controller.js in src/app/patterns/my-pattern/ directory.
 
