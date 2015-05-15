@@ -1,0 +1,19 @@
+<div id="patterns-c" class="container body-container">
+
+  <!-- Patterns list -->
+  <div class="col-md-2 nav-list">
+    <ul class="nav nav-stacked">
+      <li role="presentation" ui-sref-active="active" ng-repeat="pattern in patterns">
+        <a ui-sref="patterns.details({ patternId: pattern.id })" ng-bind="pattern.name"></a>
+      </li>
+    </ul>
+  </div>
+  <!-- /Patterns list -->
+
+  <!-- Pattern view -->
+  <div class="col-md-10 pattern-view">
+    <div ui-view></div>
+  </div>
+  <!-- /Pattern view -->
+
+</div>

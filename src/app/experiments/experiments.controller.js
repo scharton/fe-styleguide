@@ -1,21 +1,22 @@
-'use strict';
+(function() {
+  'use strict';
 
-angular.module('styleguide')
-  .controller('ExperimentsCtrl', ExperimentsCtrl);
+  angular.module('styleguide')
+    .controller('ExperimentsCtrl', ExperimentsCtrl);
 
 
-function ExperimentsCtrl($scope) {
+  function ExperimentsCtrl($scope) {
 
-  $scope.experiments = [{
-      id: 'anchor-scroll', name: 'Anchor scroll'
-    }, {
-      id: 'growth-gauge', name: 'Growth gauge'
-    }, {
-      id: 'view-flipper', name: 'View flipper'
-    }, {
-      id: 'view-slider', name: 'View slider'
-    }
-  ];
+    $scope.experiments = [{
+        id: 'anchor-scroll', name: 'Anchor scroll'
+      }, {
+        id: 'growth-gauge', name: 'Growth gauge'
+      }, {
+        id: 'view-flipper', name: 'View flipper'
+      }, {
+        id: 'view-slider', name: 'View slider'
+      }
+    ];
+  }
 
-}
-
+})();
