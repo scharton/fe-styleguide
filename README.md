@@ -5,11 +5,11 @@ https://compass.fngn.com/departments/Technology/SD/SitePages/angular-gulp%20proj
 
 ## How do I create patterns?
 
-Create a directory (e.g. my-pattern) in src/app/patterns
+Create a directory (e.g. my-pattern) in `src/app/patterns`.
 
 Inside my-pattern directory, create a HTML file which must have the exactly same name as its parent directory's (in this case, my-pattern.html)
 
-Register this new pattern in src/app/patterns/patterns.value.js. See below:
+Register this new pattern in `src/app/patterns/patterns.value.js`. See below:
 
 ```JavaScript
 (function() {
@@ -26,8 +26,9 @@ Register this new pattern in src/app/patterns/patterns.value.js. See below:
       {
         id: 'pattern2', name: 'Pattern 2'
       }, 
+      // Here is your new pattern
       {
-        id: 'my-pattern', name: 'My pattern' // Here is your new pattern
+        id: 'my-pattern', name: 'My pattern' 
       }
     ]);
 
@@ -37,10 +38,10 @@ Register this new pattern in src/app/patterns/patterns.value.js. See below:
 
 ## How do I style my pattern?
 
-Create a SASS file (e.g. my-pattern.scss) in src/app/patterns/my-pattern/ directory. 
+Create a SASS file (e.g. my-pattern.scss) in `src/app/patterns/my-pattern/` directory. 
 The file name can be anything, but it's recommended to use the same name as its parent directory's.
 
-Note: only SASS files (*.scss) will be picked up by the Style Guide. CSS files will be ignored.
+*Note: only SASS files (*.scss) will be picked up by the Style Guide. CSS files will be ignored.*
 
 In order to scope your CSS, so it won't "pollute" other parts of the Style Guide, prefix your CSS rules with an ID selector, e.g., 
 
@@ -65,7 +66,7 @@ Of course, you need to add this ID to your HTML (my-pattern.html):
 
 ## How do I add Angular code?
 
-Create my-pattern.controller.js in src/app/patterns/my-pattern/ directory.
+Create my-pattern.controller.js in `src/app/patterns/my-pattern/` directory.
 
 Add ng-controller="MyPatternCtrl" to HTML (my-pattern.html):
 
