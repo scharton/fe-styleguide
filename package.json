@@ -4,7 +4,7 @@
   "dependencies": {},
   "devDependencies": {
     "chalk": "^0.5.1",
-    "gulp": "^3.8.11",
+    "gulp": "~3.8.11",
     "lodash": "^3.7.0",
     "protractor-html-screenshot-reporter": "^0.0.19",
     "request": "^2.55.0",
