@@ -11,7 +11,8 @@
       'ui.bootstrap',
       'ui.bootstrap-slider',
       'duScroll',
-      'feAngularCore'
+      'feAngularCore',
+      'feChart'
     ])
     .config(config)
     .controller('MainCtrl', MainCtrl);
