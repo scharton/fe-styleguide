@@ -10,6 +10,8 @@
     $scope.experiments = [{
         id: 'anchor-scroll', name: 'Anchor scroll'
       }, {
+        id: 'slider', name: 'Slider'
+      }, {
         id: 'growth-gauge', name: 'Growth gauge'
       }, {
         id: 'view-flipper', name: 'View flipper'

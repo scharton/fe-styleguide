@@ -1,0 +1,20 @@
+.slider-primary {
+  .slider-track {
+  }
+
+  .slider-selection {
+    background: #00A3C8;
+    filter: none;
+  }
+
+  .slider-track-high {
+    background: #4B4944;
+  }
+
+  .slider-handle {
+    border: 1px solid #bbb;
+    background-color: #D3D3D3;
+    background-image: linear-gradient(to bottom, #FEFEFE 0%, #B4B4B4 100%);
+    opacity: 1;
+  }
+}
