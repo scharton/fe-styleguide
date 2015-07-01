@@ -1,23 +1,147 @@
 <h2>Slider</h2>
 <hr>
 
-<div ng-controller="SliderCtrl" class="col-md-4">
-  <div slider
-    ng-model="slider.value"
-    value="slider.value"
-    min="slider.min"
-    max="slider.max"
-    step="slider.step"
-    precision="slider.precision"
-    tooltip="hide"
-    tooltip-enable="false"
-    ng-disabled="false"
-    class="slider-primary">
-  </div>
+<div ng-controller="SliderCtrl">
 
-  <div class="panel panel-default panel-slider-value">
-    <div class="panel-body text-center">
-      <h4>{{ slider.value | currency }}</h4>
+  <div class="row">
+
+    <div class="col-md-4">
+      <div slider
+        ng-model="slider.value"
+        value="slider.value"
+        min="slider.min"
+        max="slider.max"
+        step="slider.step"
+        precision="slider.precision"
+        tooltip="hide"
+        tooltip-enable="false"
+        ng-disabled="false"
+        class="slider-primary slider-sm">
+      </div>
+
+      <div class="panel panel-default panel-slider-value">
+        <div class="panel-body text-center">
+          <h4>{{ slider.value | currency }}</h4>
+        </div>
+      </div>
     </div>
-  </div>
+
+
+    <div class="col-md-4">
+      <div slider
+        ng-model="slider.value"
+        value="slider.value"
+        min="slider.min"
+        max="slider.max"
+        step="slider.step"
+        precision="slider.precision"
+        tooltip="hide"
+        tooltip-enable="false"
+        ng-disabled="false"
+        class="slider-primary">
+      </div>
+
+      <div class="panel panel-default panel-slider-value">
+        <div class="panel-body text-center">
+          <h4>{{ slider.value | currency }}</h4>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-4">
+      <div slider
+        ng-model="slider.value"
+        value="slider.value"
+        min="slider.min"
+        max="slider.max"
+        step="slider.step"
+        precision="slider.precision"
+        tooltip="hide"
+        tooltip-enable="false"
+        ng-disabled="false"
+        class="slider-primary slider-lg">
+      </div>
+
+      <div class="panel panel-default panel-slider-value">
+        <div class="panel-body text-center">
+          <h4>{{ slider.value | currency }}</h4>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- /.row -->
+
+
+
+
+  <div class="row">
+
+    <div class="col-md-4">
+      <div slider
+        ng-model="slider.value"
+        value="slider.value"
+        min="slider.min"
+        max="slider.max"
+        step="slider.step"
+        precision="slider.precision"
+        tooltip="hide"
+        tooltip-enable="false"
+        ng-disabled="false"
+        class="slider-success slider-sm">
+      </div>
+
+      <div class="panel panel-default panel-slider-value">
+        <div class="panel-body text-center">
+          <h4>{{ slider.value | currency }}</h4>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-4">
+      <div slider
+        ng-model="slider.value"
+        value="slider.value"
+        min="slider.min"
+        max="slider.max"
+        step="slider.step"
+        precision="slider.precision"
+        tooltip="hide"
+        tooltip-enable="false"
+        ng-disabled="false"
+        class="slider-success">
+      </div>
+
+      <div class="panel panel-default panel-slider-value">
+        <div class="panel-body text-center">
+          <h4>{{ slider.value | currency }}</h4>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-4">
+      <div slider
+        ng-model="slider.value"
+        value="slider.value"
+        min="slider.min"
+        max="slider.max"
+        step="slider.step"
+        precision="slider.precision"
+        tooltip="hide"
+        tooltip-enable="false"
+        ng-disabled="false"
+        class="slider-success slider-lg">
+      </div>
+
+      <div class="panel panel-default panel-slider-value">
+        <div class="panel-body text-center">
+          <h4>{{ slider.value | currency }}</h4>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- /.row -->
+
 </div>
