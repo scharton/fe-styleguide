@@ -1,7 +1,7 @@
 <h2>Slider</h2>
 <hr>
 
-<div ng-controller="SliderCtrl">
+<div ng-controller="SliderCtrl" class="col-md-4">
   <div slider
     ng-model="slider.value"
     value="slider.value"
@@ -13,5 +13,11 @@
     tooltip-enable="false"
     ng-disabled="false"
     class="slider-primary">
+  </div>
+
+  <div class="panel panel-default panel-slider-value">
+    <div class="panel-body text-center">
+      <h4>{{ slider.value | currency }}</h4>
+    </div>
   </div>
 </div>

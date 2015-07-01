@@ -12,10 +12,10 @@
 
     $scope.slider = {
       min: 0,
-      max: 100,
-      step: 10,
+      max: 1000000,
+      step: 10000,
       precision: 0,
-      value: 80
+      value: 700000
     };
 
     $scope.$watch('slider.value', function(newValue, oldValue) {
