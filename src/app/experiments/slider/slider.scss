@@ -28,7 +28,8 @@ $handle-size-lg: 25px;
 
 
 // Common
-[slider] {
+[slider],
+[data-slider] {
 
   .slider-horizontal {
     width: 100%;
@@ -48,7 +49,8 @@ $handle-size-lg: 25px;
 
 
 // Primary
-[slider].slider-primary {
+[slider].slider-primary,
+[data-slider].slider-primary {
 
   .slider-selection {
     background: #00A3C8;
@@ -58,7 +60,8 @@ $handle-size-lg: 25px;
 
 
 // Success
-[slider].slider-success {
+[slider].slider-success,
+[data-slider].slider-success {
 
   .slider-selection {
     background: #91b22c;
@@ -68,20 +71,24 @@ $handle-size-lg: 25px;
 
 
 // Small
-[slider].slider-sm {
+[slider].slider-sm,
+[data-slider].slider-sm {
   @include scale-slider($track-height-sm, $handle-size-sm);
 }
 
 
 // Medium
 [slider].slider-md,
-[slider] {
+[data-slider].slider-md,
+[slider],
+[data-slider] {
   @include scale-slider($track-height-md, $handle-size-md);
 }
 
 
 // Large
-[slider].slider-lg {
+[slider].slider-lg,
+[data-slider].slider-lg {
   @include scale-slider($track-height-lg, $handle-size-lg);
 }
 
