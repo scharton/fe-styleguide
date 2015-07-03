@@ -5,6 +5,10 @@ $track-height-lg: 16px;
 $handle-size-sm: 15px;
 $handle-size-md: 20px;
 $handle-size-lg: 25px;
+$selection-primary-color: #00A3C8;
+$selection-success-color: #91b22C;
+$selection-warning-color: #C76118;
+
 
 @mixin scale-slider($trackHeight, $handleSize) {
   .slider-track {
@@ -23,6 +27,14 @@ $handle-size-lg: 25px;
   .slider-handle {
     width: $handleSize;
     height: $handleSize;
+    margin-left: -$handleSize / 2;
+  }
+}
+
+
+@mixin color-selection($color) {
+  .slider-selection {
+    background: $color;
   }
 }
 
@@ -42,6 +54,10 @@ $handle-size-lg: 25px;
     opacity: 1;
   }
 
+  .slider-selection {
+    filter: none;
+  }
+
   .slider-track-high {
     background: #4B4944;
   }
@@ -51,22 +67,20 @@ $handle-size-lg: 25px;
 // Primary
 [slider].slider-primary,
 [data-slider].slider-primary {
-
-  .slider-selection {
-    background: #00A3C8;
-    filter: none;
-  }
+  @include color-selection($selection-primary-color);
 }
 
 
 // Success
 [slider].slider-success,
 [data-slider].slider-success {
+  @include color-selection($selection-success-color);
+}
 
-  .slider-selection {
-    background: #91b22c;
-    filter: none;
-  }
+// Warning
+[slider].slider-warning,
+[data-slider].slider-warning {
+  @include color-selection($selection-warning-color);
 }
 
 
@@ -99,4 +113,34 @@ $handle-size-lg: 25px;
 
 .panel-slider-value {
   margin-top: 10px;
+}
+
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #000;
+}
+.arrow-down-primary {
+  border-top-color: $selection-primary-color;
+}
+.arrow-down-success {
+  border-top-color: $selection-success-color;
+}
+
+
+.eighty-pct-c {
+  padding-left: 80%;
+
+  .eighty-pct {
+    width: 120px;
+    margin-left: -60px;
+    text-align: center;
+
+    .arrow-down {
+      margin: 5px auto 0;
+    }
+  }
 }

@@ -3,8 +3,10 @@
 
 <div ng-controller="SliderCtrl">
 
+  <h4>Primary</h4>
   <div class="row">
 
+    <!-- primary small -->
     <div class="col-md-4">
       <div data-slider
         data-ng-model="slider.value"
@@ -16,15 +18,9 @@
         data-slider-tooltip="hide"
         class="slider-primary slider-sm">
       </div>
-
-      <div class="panel panel-default panel-slider-value">
-        <div class="panel-body text-center">
-          <h4>{{ slider.value | currency }}</h4>
-        </div>
-      </div>
     </div>
 
-
+    <!-- primary medium -->
     <div class="col-md-4">
       <div data-slider
         data-ng-model="slider.value"
@@ -36,15 +32,9 @@
         data-slider-tooltip="hide"
         class="slider-primary">
       </div>
-
-      <div class="panel panel-default panel-slider-value">
-        <div class="panel-body text-center">
-          <h4>{{ slider.value | currency }}</h4>
-        </div>
-      </div>
     </div>
 
-
+    <!-- primary large -->
     <div class="col-md-4">
       <div data-slider
         data-ng-model="slider.value"
@@ -56,19 +46,15 @@
         data-slider-tooltip="hide"
         class="slider-primary slider-lg">
       </div>
-
-      <div class="panel panel-default panel-slider-value">
-        <div class="panel-body text-center">
-          <h4>{{ slider.value | currency }}</h4>
-        </div>
-      </div>
     </div>
 
   </div> <!-- /.row -->
 
 
+  <h4>Success</h4>
   <div class="row">
 
+    <!-- success small -->
     <div class="col-md-4">
       <div data-slider
         data-ng-model="slider.value"
@@ -80,15 +66,9 @@
         data-slider-tooltip="hide"
         class="slider-success slider-sm">
       </div>
-
-      <div class="panel panel-default panel-slider-value">
-        <div class="panel-body text-center">
-          <h4>{{ slider.value | currency }}</h4>
-        </div>
-      </div>
     </div>
 
-
+    <!-- success medium -->
     <div class="col-md-4">
       <div data-slider
         data-ng-model="slider.value"
@@ -100,15 +80,9 @@
         data-slider-tooltip="hide"
         class="slider-success">
       </div>
-
-      <div class="panel panel-default panel-slider-value">
-        <div class="panel-body text-center">
-          <h4>{{ slider.value | currency }}</h4>
-        </div>
-      </div>
     </div>
 
-
+    <!-- success large -->
     <div class="col-md-4">
       <div data-slider
         data-ng-model="slider.value"
@@ -120,14 +94,92 @@
         data-slider-tooltip="hide"
         class="slider-success slider-lg">
       </div>
+    </div>
 
-      <div class="panel panel-default panel-slider-value">
-        <div class="panel-body text-center">
-          <h4>{{ slider.value | currency }}</h4>
-        </div>
+  </div> <!-- /.row -->
+
+
+  <h4>Warning</h4>
+  <div class="row">
+
+    <!-- warning small -->
+    <div class="col-md-4">
+      <div data-slider
+        data-ng-model="slider.value"
+        data-value="slider.value"
+        data-min="slider.min"
+        data-max="slider.max"
+        data-step="slider.step"
+        data-precision="slider.precision"
+        data-slider-tooltip="hide"
+        class="slider-warning slider-sm">
       </div>
     </div>
 
+    <!-- warning medium -->
+    <div class="col-md-4">
+      <div data-slider
+        data-ng-model="slider.value"
+        data-value="slider.value"
+        data-min="slider.min"
+        data-max="slider.max"
+        data-step="slider.step"
+        data-precision="slider.precision"
+        data-slider-tooltip="hide"
+        class="slider-warning">
+      </div>
+    </div>
+
+    <!-- warning large -->
+    <div class="col-md-4">
+      <div data-slider
+        data-ng-model="slider.value"
+        data-value="slider.value"
+        data-min="slider.min"
+        data-max="slider.max"
+        data-step="slider.step"
+        data-precision="slider.precision"
+        data-slider-tooltip="hide"
+        class="slider-warning slider-lg">
+      </div>
+    </div>
+
+  </div> <!-- /.row -->
+
+
+  <br><br>
+  <h4>Custom</h4>
+  <div class="row">
+
+    <div class="col-md-6 col-md-offset-3">
+
+      <!-- custom stuff -->
+      <div class="row-slider">
+        <div class="eighty-pct-c">
+          <div class="eighty-pct">
+            80% BALANCED
+            <div class="arrow-down arrow-down-primary"></div>
+          </div>
+        </div>
+
+        <div data-slider
+          data-ng-model="slider.value"
+          data-value="slider.value"
+          data-min="slider.min"
+          data-max="slider.max"
+          data-step="slider.step"
+          data-precision="slider.precision"
+          data-slider-tooltip="hide"
+          class="slider-primary slider-lg">
+        </div>
+
+        <div class="panel panel-default panel-slider-value">
+          <div class="panel-body text-center">
+            <h4>{{ slider.value | currency }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
   </div> <!-- /.row -->
 
 </div>
