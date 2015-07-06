@@ -23,6 +23,10 @@
         $log.log(newValue);
       }
     });
+
+    // Use border-radius to detect IE8
+    // Disable slider in IE8
+    $scope.sliderSupport = Modernizr.borderradius;
   }
 
 })();
